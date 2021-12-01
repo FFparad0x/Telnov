@@ -1,0 +1,191 @@
+login {
+    float:right;
+    text-align:left;
+}
+.jbtn {
+    margin:inherit;
+    margin-right: 5px;
+    margin-bottom:5px;
+    margin-top:5px;
+    padding: 5px;
+    font-family: Times-New-Roman;
+    background-color:#30476e;
+    border-radius:28px;
+    border:1px solid #30476e;
+    display:inline-block;
+    cursor:pointer;
+    padding:10px 20px;
+    text-decoration:none;
+    color:#ffffff;
+}
+.jbtn:hover {
+    margin:inherit;
+    margin-right: 5px;
+    margin-bottom:5px;
+    margin-top:5px;
+    background-color:#1a263b;
+    border-radius:14px;
+    border:1px solid #1a263b;
+    display:inline-block;
+    cursor:pointer;
+    padding:10px 20px;
+    text-decoration:none;
+    color:#ffffff;
+}
+.login a{
+    display:contents;
+    color:#30476e;
+    text-decoration:none;
+    padding:1px 6px 1px 6px ;
+}
+.login a:hover{
+    display:contents;
+    color:#ff7a40;
+    border:none;
+    text-decoration:none;
+    padding:1px 6px 1px 6px ;
+}
+.login button{
+    margin-top:1px;
+    background-color:#30476e;
+    float:left;
+    padding:0px 6px 1px 6px ;
+    border:none;
+    font-family:Times-New-Roman;
+    font-size:16px;
+    color:white;
+    border-radius: 28px;
+    cursor:pointer;
+}
+.login button:hover{
+    background-color:#1a263b;
+    border-radius:5px;
+    cursor:pointer;
+}
+.fline{
+    display:flex;
+}
+.login:after{
+    display:block;
+}
+.top ul {
+    list-style: none;
+    padding: 4px;
+    margin: auto;
+    text-align:center;
+    display:inline;
+}
+.top ul:after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+.topmenu ul{
+    text-align:center;
+    margin:auto;
+}
+.topmenu a {
+    text-decoration: none;
+    display: block;
+}
+.top li:hover > .submenu {
+    visibility: visible;
+    opacity: 1;
+    margin:inherit;
+    margin-right: 5px;
+    padding: 3px;
+    background-color:#30476e;
+    border-radius:14px;
+    border:1px solid #1a263b;
+    display:inline-block;
+    cursor:pointer;
+    padding:10px 20px;
+    text-decoration:none;
+    color:#ffffff;
+}
+
+.topmenu > li {
+    position: relative;
+    text-align:center;
+    border-left: 1px solid black;
+    margin:inherit;
+    margin-right: 5px;
+    padding: 3px;
+    background-color:#30476e;
+    border-radius:28px;
+    border:1px solid #30476e;
+    display:inline-block;
+    cursor:pointer;
+    padding:10px 20px;
+    text-decoration:none;
+    color:#ffffff;
+}
+.topmenu > li:hover {
+
+    position: relative;
+    border-left: 1px solid black;
+    margin:inherit;
+    margin-right: 5px;
+    padding: 3px;
+    background-color:#1a263b;
+    border-radius:14px;
+    border:1px solid #1a263b;
+    display:inline-block;
+    cursor:pointer;
+    padding:10px 20px;
+    text-decoration:none;
+    color:#ffffff;
+}
+
+.topmenu > li:first-child {border-left: 0;}
+.topmenu > li > a {
+    color:#ffffff;
+    text-decoration: none;
+}
+.shapka {
+    text-align:center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+span {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.shapka img {
+    display:inline-block;
+    height:60px;
+}
+
+.footmenu {
+    text-align:center;
+    background-color: #1a263b;
+    overflow: hidden;
+    /*position:fixed;
+    bottom:0;
+    left:0;*/
+    width: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
+/* Style the links inside the .topigation bar */
+.footmenu a {
+    background-color: #1a263b; /* Grey background color */
+    color: #697282; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 5px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    vertical-align:center;
+    margin:0 20%;
+}
+
+/* Change the color of links on hover */
+.footmenu a:hover {
+    background-color: #1a263b;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.footmenu a.active {
+    background-color: #1a263b;
+    color: #697282;
+}
