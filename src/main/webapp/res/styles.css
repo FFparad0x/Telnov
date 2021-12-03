@@ -2,6 +2,15 @@ login {
     float:right;
     text-align:left;
 }
+.mainsel{
+    display: inline-flex;
+}
+.Content{
+    margin: 0px 2em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
 .jbtn {
     margin:inherit;
     margin-right: 5px;
@@ -188,4 +197,8 @@ span {
 .footmenu a.active {
     background-color: #1a263b;
     color: #697282;
+}
+
+.selector{
+    text-align: center;
 }
