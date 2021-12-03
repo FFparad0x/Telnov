@@ -8,6 +8,11 @@ public class Theatre {
     String name;
     ArrayList<String> actors;
     ArrayList<String> producers;
+
+    public ArrayList<String> getProducers() {
+        return producers;
+    }
+
     String address;
     int num_parter, num_beletage, num_balcon;
     ArrayList<Performance> performances;

@@ -9,31 +9,32 @@
 <html>
 <head>
     <%
-        try {
-            ArrayList<Theatre> searchResult = new ArrayList<>();
-            if (request.getParameter("theatres") != null) {
-                var parametrs = request.getParameterMap().get("theatres");
-                for (int i = 0; i < parametrs.length; i++) {
-                    if(Integer.valueOf(parametrs[i]) < DataBase.theatres.size()){
-                        searchResult.add(DataBase.theatres.get(i));
-                    }
-                }
-            }
-            if (request.getParameter("producers") != null) {
-                var parametrs = request.getParameterMap().get("producers");
-                for (int i = 0; i < parametrs.length; i++) {
-                    for (int j = 0; j < DataBase.theatres.size(); j++) {
-                        if(Integer.valueOf(parametrs[i]) == DataBase.theatres.get(j).){
-                            searchResult.add(DataBase.theatres.get(i));
-                        }
-                    }
-                }
-            }
 
-        }
-        catch (Exception e){
-
-        }
+//        try {
+//            ArrayList<Theatre> searchResult = new ArrayList<>();
+//            if (request.getParameter("theatres") != null) {
+//                var parametrs = request.getParameterMap().get("theatres");
+//                for (int i = 0; i < parametrs.length; i++) {
+//                    if(Integer.valueOf(parametrs[i]) < DataBase.theatres.size()){
+//                        searchResult.add(DataBase.theatres.get(i));
+//                    }
+//                }
+//            }
+//            if (request.getParameter("producers") != null) {
+//                var parametrs = request.getParameterMap().get("producers");
+//                for (int i = 0; i < parametrs.length; i++) {
+//                    for (int j = 0; j < DataBase.theatres.size(); j++) {
+//                        if(Integer.valueOf(parametrs[i]) == DataBase.theatres.get(j).getProducers().){
+//                            searchResult.add(DataBase.theatres.get(i));
+//                        }
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch (Exception e){
+//
+//        }
 
 
 
@@ -135,6 +136,7 @@
     for(String i: Records.list){
         %> <%= i %> <br><%
     }
+    response.getWriter().println("eae");
 %>
 
 
