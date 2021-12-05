@@ -7,9 +7,16 @@ login {
 }
 .Content{
     margin: 0px 2em;
+
+    overflow-y: visible;
+
+}
+.Content-Body{
     display: flex;
     flex-direction: column;
-    text-align: left;
+    overflow-y: auto;
+    max-height: 22vmin;
+
 }
 .jbtn {
     margin:inherit;
@@ -200,5 +207,14 @@ span {
 }
 
 .selector{
+    text-align: center;
+}
+
+table.iksweb{text-decoration: none;border-collapse:collapse;width:100%;text-align:center;border-radius:10px;margin-top:10px;overflow:hidden;}
+table.iksweb th{font-weight:normal;font-size:16px; color:#ffffff;background-color:#30476e;font-family: 'Roboto Slab', serif;}
+table.iksweb td{font-size:15px;color:#1a263b;font-family: 'Roboto Slab', serif;}
+table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:10px 5px;line-height:15px;vertical-align: middle;border: 2px solid #30476e;}	table.iksweb tr:hover{background-color:#f9fafb}
+table.iksweb tr:hover td{color:#588bb0;cursor:default;}
+table.iksweb tr {
     text-align: center;
 }

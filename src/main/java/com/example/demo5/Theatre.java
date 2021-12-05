@@ -8,9 +8,14 @@ public class Theatre {
     String name;
     ArrayList<String> actors;
     ArrayList<String> producers;
+    int id;
 
     public ArrayList<String> getProducers() {
         return producers;
+    }
+
+    public ArrayList<String> getActors() {
+        return actors;
     }
 
     String address;
@@ -25,7 +30,22 @@ public class Theatre {
         return performances;
     }
 
+    public int getId() {
+            return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+    public int getNum_sum(){
+        return num_balcon+num_beletage+num_parter;
+    }
     public Theatre(){
+        id = IndexCounter.getIdTheatre();
         name = randomString(12);
         actors = new ArrayList<>();
         producers = new ArrayList<>();
