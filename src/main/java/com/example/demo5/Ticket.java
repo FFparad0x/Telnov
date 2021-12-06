@@ -9,8 +9,8 @@ public class Ticket {
     boolean can_i_buy; //куплен или нет
 
     public void setTicket(){
-        this.row = 1 + (int)(Math.random()*4);
-        this.place = 1 + (int)(Math.random()*5);
+        row = 1 + (int)(Math.random()*4);
+        place = 1 + (int)(Math.random()*5);
     }
 
     public int getRow() {
@@ -22,11 +22,11 @@ public class Ticket {
     }
 
     public void ticketSold(){
-        this.can_i_buy = false;
+        can_i_buy = false;
     }
 
     public void ticketNoSold(){
-        this.can_i_buy = true;
+        can_i_buy = true;
     }
     public Ticket(){
         for (Ticket ticket : DataBaseTicket.tickets){
