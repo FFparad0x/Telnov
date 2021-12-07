@@ -188,7 +188,8 @@
                 <input name='llogin' type='text' id='llogin' placeholder='Логин' required> <br>
                 <input name='lpass' type='password' id='lpass' placeholder='Пароль' required> <br>
                 <button class='login' type='submit'>Войти</button>
-                | <a href='signup.php'>Регистрация</a>
+                | <!--<a href='signup.php'>Регистрация</a>-->
+                <a href="registration.jsp">Регистрация</a>
             </form>
         </div>
     </div>
