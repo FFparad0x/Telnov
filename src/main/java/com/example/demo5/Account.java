@@ -4,8 +4,15 @@ package com.example.demo5;
 public class Account {
     private String login;
     private String password;
-    private boolean admin;
+    private int age;
     private String email;
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    private boolean admin;
+
     public Account(String login, String password, String email){
         this.login = login;
         this.password = password;
@@ -29,5 +36,7 @@ public class Account {
     public void setPassword(String password){
         this.password = password;
     }
+
      */
+
 }

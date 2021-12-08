@@ -14,6 +14,9 @@
         if (DataBase.theatres == null) {
             DataBase.InitTheatre(10);
         }
+        if (DataBase.accounts == null){
+            DataBase.InitAccounts();
+        }
         ArrayList<Theatre> theatresToShow = null;
         try {
             ArrayList<Theatre> searchResult = null;
@@ -191,10 +194,11 @@
             </li>
         </ul>
         <div class='login'>
-            <form action='' method='post' id='login'>
+            <form action='authorization.jsp' method='get' id='login'>
                 <input name='llogin' type='text' id='llogin' placeholder='Логин' required> <br>
                 <input name='lpass' type='password' id='lpass' placeholder='Пароль' required> <br>
                 <button class='login' type='submit'>Войти</button>
+                <!--<a href="authorization.jsp">Войти</a>-->
                 | <!--<a href='signup.php'>Регистрация</a>-->
                 <a href="registration.jsp">Регистрация</a>
             </form>

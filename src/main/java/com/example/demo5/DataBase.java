@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class DataBase {
     public static ArrayList<Theatre> theatres;
     public static ArrayList<Performance> performances;
+    public static ArrayList<Account> accounts;
+    public static ArrayList<Ticket> tickets;
 //    public static ArrayList<User> users; TODO: make user
 
     public static void InitTheatre(int num){
@@ -23,5 +25,8 @@ public class DataBase {
             }
         }
         return null;
+    }
+    public static void InitAccounts(){
+        accounts = new ArrayList<>();
     }
 }

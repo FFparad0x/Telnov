@@ -29,7 +29,7 @@ public class Ticket {
         can_i_buy = true;
     }
     public Ticket(){
-        for (Ticket ticket : DataBaseTicket.tickets){
+        for (Ticket ticket : DataBase.tickets){
         }
     }
 }
