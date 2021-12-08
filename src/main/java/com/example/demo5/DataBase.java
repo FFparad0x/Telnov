@@ -7,6 +7,7 @@ public class DataBase {
     public static ArrayList<Theatre> theatres;
     public static ArrayList<Performance> performances;
 //    public static ArrayList<User> users; TODO: make user
+
     public static void InitTheatre(int num){
         theatres = new ArrayList<>();
         for (int i = 0; i < num; i++) {
