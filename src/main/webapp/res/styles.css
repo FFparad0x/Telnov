@@ -1,6 +1,26 @@
-login {
+
+
+.login {
     float:right;
     text-align:left;
+}
+
+.edit form {
+    display: inline-grid;
+}
+.edit{
+    text-align: center;
+}
+.edit label{
+    display: contents;
+    margin: 2em;
+}
+.edit label textarea{
+    width: fit-content;
+}
+.edit label input,textarea{
+    width: auto;
+    margin-bottom: 10px;
 }
 .mainsel{
     display: inline-flex;
@@ -86,7 +106,7 @@ login {
 }
 .top ul {
     list-style: none;
-    padding: 4px;
+    padding-left: 170px;
     margin: auto;
     text-align:center;
     display:inline;
@@ -97,9 +117,12 @@ login {
     clear: both;
 
 }
+.topmenu  {
+
+}
 .topmenu ul{
     text-align:center;
-    margin:auto;
+    margin:0;
 }
 .topmenu a {
     text-decoration: none;
@@ -213,8 +236,10 @@ span {
 table.iksweb{text-decoration: none;border-collapse:collapse;width:100%;text-align:center;border-radius:10px;margin-top:10px;overflow:hidden;}
 table.iksweb th{font-weight:normal;font-size:16px; color:#ffffff;background-color:#30476e;font-family: 'Roboto Slab', serif;}
 table.iksweb td{font-size:15px;color:#1a263b;font-family: 'Roboto Slab', serif;}
-table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:10px 5px;line-height:15px;vertical-align: middle;border: 2px solid #30476e;}	table.iksweb tr:hover{background-color:#f9fafb}
-table.iksweb tr:hover td{color:#588bb0;cursor:default;}
+
+table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:10px 5px;line-height:15px;vertical-align: middle;border: 2px solid #30476e;}
+table.iksweb tr:hover {background-color:#f9fafb;  }
+table.iksweb tr:hover td{color:#588bb0;cursor:pointer; visibility: visible}
 table.iksweb tr {
     text-align: center;
 }

@@ -19,6 +19,19 @@ public class Theatre {
     }
 
     String address;
+
+    public void setNum_parter(int num_parter) {
+        this.num_parter = num_parter;
+    }
+
+    public void setNum_beletage(int num_beletage) {
+        this.num_beletage = num_beletage;
+    }
+
+    public void setNum_balcon(int num_balcon) {
+        this.num_balcon = num_balcon;
+    }
+
     int num_parter, num_beletage, num_balcon;
     ArrayList<Performance> performances;
 
@@ -46,18 +59,37 @@ public class Theatre {
     }
     public Theatre(){
         id = IndexCounter.getIdTheatre();
-        name = randomString(12);
         actors = new ArrayList<>();
         producers = new ArrayList<>();
-        address = randomString( 20);
+        performances = new ArrayList<>();
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getNum_balcon() {
+        return num_balcon;
+    }
+
+    public int getNum_beletage() {
+        return num_beletage;
+    }
+
+    public int getNum_parter() {
+        return num_parter;
+    }
+
+    public void Fill() {
         num_balcon = 10;
         num_beletage = 10;
         num_parter = 10;
-        performances = new ArrayList<>();
-        Init();
-    }
-
-    private void Init() {
+        address = randomString(12);
+        name = randomString(12);
         for(int i = 0; i<10;i++){
             producers.add(randomString(4) + " " + randomString(6));
             actors.add(randomString(4) + " " + randomString(6));
@@ -77,5 +109,20 @@ public class Theatre {
                 .toString();
 
         return generatedString;
+    }
+
+    public String PrintProducers() {
+        String result = "";
+        for (String producer : producers) {
+            result = result + producer + "\n";
+        }
+        return result;
+    }
+    public String PrintActors() {
+        String result = "";
+        for (String actor : actors) {
+            result = result + actor + "\n";
+        }
+        return result;
     }
 }

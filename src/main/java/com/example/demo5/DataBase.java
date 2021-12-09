@@ -11,7 +11,9 @@ public class DataBase {
     public static void InitTheatre(int num){
         theatres = new ArrayList<>();
         for (int i = 0; i < num; i++) {
-            theatres.add(new Theatre());
+            Theatre temp = new Theatre();
+            temp.Fill();
+            theatres.add(temp);
         }
 
     }
