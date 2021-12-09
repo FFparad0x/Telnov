@@ -10,11 +10,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="res/styles.css">
     <meta charset="UTF-8">
     <%
         if (DataBase.theatres == null) {
-            DataBase.InitTheatre(10);
+            DataBase.InitTheatre(1);
+            response.getWriter().println("Создан театр");
         }
+        response.getWriter().println(DataBase.theatres.size());
         if(request.getParameter("add") != null){
             Theatre theatre = new Theatre();
             theatre.setName(request.getParameter("name"));
@@ -22,10 +25,10 @@
             theatre.setNum_balcon(Integer.parseInt(request.getParameter("balcony")));
             theatre.setNum_beletage(Integer.parseInt(request.getParameter("beletage")));
             theatre.setNum_parter(Integer.parseInt(request.getParameter("parter")));
-            for (String producers : request.getParameter("producers").split("\n")) {
+            for (String producers : request.getParameter("producersset").split("\n")) {
                 theatre.getProducers().add(producers);
             }
-            for (String producers : request.getParameter("actors").split("\n")) {
+            for (String producers : request.getParameter("actorsset").split("\n")) {
                 theatre.getActors().add(producers);
             }
 
@@ -41,15 +44,16 @@
             theatre.setNum_parter(Integer.parseInt(request.getParameter("parter")));
             theatre.getProducers().clear();
             theatre.getActors().clear();
-            for (String producers : request.getParameter("producers").split("\n")) {
+            for (String producers : request.getParameter("producersset").split("\n")) {
                 theatre.getProducers().add(producers);
             }
-            for (String producers : request.getParameter("actors").split("\n")) {
+            for (String producers : request.getParameter("actorsset").split("\n")) {
                 theatre.getActors().add(producers);
             }
         }
         if(request.getParameter("delid") != null){
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
+
         }
         ArrayList<Theatre> theatresToShow = null;
         try {
@@ -208,7 +212,7 @@
         response.getWriter().println(theatresToShow.size());
 
     %>
-    <link rel="stylesheet" href="res/styles.css">
+
 
     <title>Концертная касса</title>
 </head>
@@ -331,10 +335,17 @@
                                 }
                             }
                         }
-                        sDate = new Date(min);
-                        eDate = new Date(max);
-                        data1 = formatter.format(sDate);
-                        data2 = formatter.format(eDate);
+                        if(min == null){
+                            sDate = new Date();
+                            eDate = new Date();
+                        }
+                        else {
+                            sDate = new Date(min);
+                            eDate = new Date(max);
+                        }
+                            data1 = formatter.format(sDate);
+                            data2 = formatter.format(eDate);
+
                     } else {
                         data1 = request.getParameter("dStart");
                         data2 = request.getParameter("dEnd");
@@ -353,7 +364,11 @@
 </div>
 <%-- Тут вывод в таблицу--%>
 <%
-
+    if(true){ //TODO: if admin%>
+    <form action="Theatre.jsp" method="post">
+        <button type="submit" name="id" value="-1" class="jbtn">Добавить театр</button>
+    </form>
+<% }
     if (DataBase.theatres != null) {
         if (theatresToShow == null) {
             theatresToShow = DataBase.theatres;

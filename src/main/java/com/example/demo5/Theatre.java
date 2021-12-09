@@ -1,5 +1,7 @@
 package com.example.demo5;
 
+import jakarta.ws.rs.PUT;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -93,7 +95,9 @@ public class Theatre {
         for(int i = 0; i<10;i++){
             producers.add(randomString(4) + " " + randomString(6));
             actors.add(randomString(4) + " " + randomString(6));
-            performances.add(new Performance(this));
+            Performance t = new Performance();
+            t.Fill();
+            performances.add(t);
         }
     }
 
@@ -110,7 +114,14 @@ public class Theatre {
 
         return generatedString;
     }
-
+    public Performance GetPerformanceById(int id){
+        for (Performance performance : performances) {
+            if(performance.id == id){
+                return performance;
+            }
+        }
+        return null;
+    }
     public String PrintProducers() {
         String result = "";
         for (String producer : producers) {
