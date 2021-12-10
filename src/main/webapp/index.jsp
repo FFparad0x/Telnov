@@ -55,6 +55,9 @@
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
 
         }
+        if (DataBase.accounts == null){
+            DataBase.InitAccounts();
+        }
         ArrayList<Theatre> theatresToShow = null;
         try {
             ArrayList<Theatre> searchResult = null;
@@ -217,7 +220,9 @@
     <title>Концертная касса</title>
 </head>
 <body>
+  
 <jsp:include page="include/shapka.jsp"></jsp:include>
+  
 <div class="selector">  <%--TODO: id - element index. Set hidden input with search = 1  --%>
     <form action="index.jsp" method="get" class="mainsel">
         <input type="hidden" name="search" value="1">
