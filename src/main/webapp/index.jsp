@@ -10,9 +10,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="res/styles.css">
+    <meta charset="UTF-8">
     <%
         if (DataBase.theatres == null) {
-            DataBase.InitTheatre(10);
+            DataBase.InitTheatre(1);
+            response.getWriter().println("Создан театр");
+        }
+        response.getWriter().println(DataBase.theatres.size());
+        if (request.getParameter("add") != null) {
+            Theatre theatre = new Theatre();
+            theatre.setName(request.getParameter("name"));
+            theatre.setAddress(request.getParameter("address"));
+            theatre.setNum_balcon(Integer.parseInt(request.getParameter("balcony")));
+            theatre.setNum_beletage(Integer.parseInt(request.getParameter("beletage")));
+            theatre.setNum_parter(Integer.parseInt(request.getParameter("parter")));
+            for (String producers : request.getParameter("producersset").split("\n")) {
+                theatre.getProducers().add(producers);
+            }
+            for (String producers : request.getParameter("actorsset").split("\n")) {
+                theatre.getActors().add(producers);
+            }
+
+            DataBase.theatres.add(theatre);
+        }
+        if (request.getParameter("save") != null) {
+            int id = Integer.parseInt(request.getParameter("saveid"));
+            Theatre theatre = DataBase.getTheatre(id);
+            theatre.setName(request.getParameter("name"));
+            theatre.setAddress(request.getParameter("address"));
+            theatre.setNum_balcon(Integer.parseInt(request.getParameter("balcony")));
+            theatre.setNum_beletage(Integer.parseInt(request.getParameter("beletage")));
+            theatre.setNum_parter(Integer.parseInt(request.getParameter("parter")));
+            theatre.getProducers().clear();
+            theatre.getActors().clear();
+            for (String producers : request.getParameter("producersset").split("\n")) {
+                theatre.getProducers().add(producers);
+            }
+            for (String producers : request.getParameter("actorsset").split("\n")) {
+                theatre.getActors().add(producers);
+            }
+        }
+        if (request.getParameter("delid") != null) {
+            DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
+
         }
         if (DataBase.accounts == null){
             DataBase.InitAccounts();
@@ -174,37 +215,14 @@
         response.getWriter().println(theatresToShow.size());
 
     %>
-    <link rel="stylesheet" href="res/styles.css">
 
-    <title>JSP - Hello World</title>
+
+    <title>Концертная касса</title>
 </head>
 <body>
-<div class="top">
-    <div class="shapka">
-        <img src="res/logo.png" alt="Здесь было лого, но его украли!">
-        <hr>
-    </div>
-    <div class='fline'>
-        <ul class="topmenu">
-            <li>
-                <a href='#'>Главное меню</a>
-            </li>
-            <li>
-                <a href='#'>Корзина</a>
-            </li>
-        </ul>
-        <div class='login'>
-            <form action='authorization.jsp' method='get' id='login'>
-                <input name='llogin' type='text' id='llogin' placeholder='Логин' required> <br>
-                <input name='lpass' type='password' id='lpass' placeholder='Пароль' required> <br>
-                <button class='login' type='submit'>Войти</button>
-                <!--<a href="authorization.jsp">Войти</a>-->
-                | <!--<a href='signup.php'>Регистрация</a>-->
-                <a href="registration.jsp">Регистрация</a>
-            </form>
-        </div>
-    </div>
-</div>
+  
+<jsp:include page="include/shapka.jsp"></jsp:include>
+  
 <div class="selector">  <%--TODO: id - element index. Set hidden input with search = 1  --%>
     <form action="index.jsp" method="get" class="mainsel">
         <input type="hidden" name="search" value="1">
@@ -322,10 +340,16 @@
                                 }
                             }
                         }
-                        sDate = new Date(min);
-                        eDate = new Date(max);
+                        if (min == null) {
+                            sDate = new Date();
+                            eDate = new Date();
+                        } else {
+                            sDate = new Date(min);
+                            eDate = new Date(max);
+                        }
                         data1 = formatter.format(sDate);
                         data2 = formatter.format(eDate);
+
                     } else {
                         data1 = request.getParameter("dStart");
                         data2 = request.getParameter("dEnd");
@@ -344,7 +368,11 @@
 </div>
 <%-- Тут вывод в таблицу--%>
 <%
-
+    if (true) { //TODO: if admin%>
+<form action="Theatre.jsp" method="post">
+    <button type="submit" name="id" value="-1" class="jbtn">Добавить театр</button>
+</form>
+<% }
     if (DataBase.theatres != null) {
         if (theatresToShow == null) {
             theatresToShow = DataBase.theatres;
@@ -354,6 +382,12 @@
         <th>Название</th>
         <th>Адрес</th>
         <th>Количество мест</th>
+        <% //TODO: if admin show that column
+            if (true) {
+        %>
+        <th>Ред.</th>
+        <%
+            }%>
     </tr>
 
     <%
@@ -370,6 +404,15 @@
         <td onclick="window.location = 'performances.jsp?id=<%=theatre.getId()%>'">
             <%=theatre.getNum_sum()%>
         </td>
+        <%
+            // TODO: make login work again
+            if (true) {
+        %>
+        <td class="Superb" onclick="window.location = 'Theatre.jsp?id=<%=theatre.getId()%>'">&#9998;</td>
+
+        <%
+            }
+        %>
     </tr>
     <%
         }
@@ -387,29 +430,6 @@
 
 %>
 
-
-<form action="index.jsp" method="get">
-    <button type="submit" name="print">Добавить</button>
-</form>
-
-
-<h1><%= "Hello World!" %>
-</h1>
-<br>
-
-<a href="hello-servlet">Hello Servlet</a>
-<%
-    if (request.getParameter("vehicle") != null) {
-//        response.getWriter().println(request.getParameter("vehicle"));
-        Arrays.stream(request.getParameterMap().get("vehicle")).forEach(i -> {
-            try {
-                response.getWriter().println(i);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-%>
 
 </body>
 </html>
