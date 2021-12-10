@@ -46,7 +46,7 @@ public class Theatre {
     }
 
     public int getId() {
-            return id;
+        return id;
     }
 
     public String getName() {
@@ -56,10 +56,12 @@ public class Theatre {
     public String getAddress() {
         return address;
     }
-    public int getNum_sum(){
-        return num_balcon+num_beletage+num_parter;
+
+    public int getNum_sum() {
+        return num_balcon + num_beletage + num_parter;
     }
-    public Theatre(){
+
+    public Theatre() {
         id = IndexCounter.getIdTheatre();
         actors = new ArrayList<>();
         producers = new ArrayList<>();
@@ -92,10 +94,10 @@ public class Theatre {
         num_parter = 10;
         address = randomString(12);
         name = randomString(12);
-        for(int i = 0; i<10;i++){
+        for (int i = 0; i < 10; i++) {
             producers.add(randomString(4) + " " + randomString(6));
             actors.add(randomString(4) + " " + randomString(6));
-            Performance t = new Performance();
+            Performance t = new Performance(this);
             t.Fill();
             performances.add(t);
         }
@@ -114,14 +116,16 @@ public class Theatre {
 
         return generatedString;
     }
-    public Performance GetPerformanceById(int id){
+
+    public Performance GetPerformanceById(int id) {
         for (Performance performance : performances) {
-            if(performance.id == id){
+            if (performance.id == id) {
                 return performance;
             }
         }
         return null;
     }
+
     public String PrintProducers() {
         String result = "";
         for (String producer : producers) {
@@ -129,6 +133,7 @@ public class Theatre {
         }
         return result;
     }
+
     public String PrintActors() {
         String result = "";
         for (String actor : actors) {

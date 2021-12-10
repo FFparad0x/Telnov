@@ -30,7 +30,7 @@
             <input id="1" type="text" placeholder="Название" name="name" value="<%=temp.getName()%>" required>
         </label>
         <label>Дата:
-            <input type="datetime-local"  name="date" value="<%=format.format(time)%>"
+            <input type="datetime-local" name="date" value="<%=format.format(time)%>"
                    required>
         </label>
 
@@ -40,9 +40,9 @@
             <div class="line">
                 <input type="checkbox" name="producers" value="<%=producer%>"
                     <%
-                        if(temp.getProducer().contains(producer))
+                         if(temp.getProducer().contains(producer)){
                 %>
-                       checked> <%=producer%>
+                       checked <%}%>> <%=producer%>
             </div>
             <%
                 }
@@ -54,21 +54,23 @@
             <div class="line">
                 <input type="checkbox" name="actors" value="<%=actor%>"
                     <%
-                        if(temp.getActors().contains(actor))
+                        if(temp.getActors().contains(actor)){
                 %>
-                       checked> <%=actor%>
+                       checked<%}%> > <%=actor%>
             </div>
             <%
                 }
             %>
         </label>
         <label>Продолжительность в минутах
-            <input type="text" name="len" placeholder="Продолжительность (мин)"  required pattern="\d*" value="<%=temp.getLength()%>">
+            <input type="text" name="len" placeholder="Продолжительность (мин)" required pattern="\d*"
+                   value="<%=temp.getLength()%>">
         </label>
         <div class="digits">
             <div class="freedigits">
                 <label>Кол-во свободных мест в партере
-                    <input type="text" placeholder="Кол-во" name="freeparter" value="<%=temp.getFree_parter()%>" required
+                    <input type="text" placeholder="Кол-во" name="freeparter" value="<%=temp.getFree_parter()%>"
+                           required
                            pattern="\d*">
                 </label>
                 <label>Кол-во свободных мест в бельэтаже
@@ -101,8 +103,9 @@
             <input type="submit" value="Удалить" form="del" class="jbtn" style="background-color: #902019;border: none">
         </div>
     </form>
-    <form name="del" id="del" action="Performance.jsp" method="get">
+    <form name="del" id="del" action="performances.jsp" method="get">
         <input type="hidden" name="delid" value="<%=temp.getId()%>" class="jbtn">
+        <input type="hidden" name="id" value="<%=theatre.getId()%>">
     </form>
 </div>
 <%} else {%>
@@ -114,7 +117,7 @@
             <input type="text" placeholder="Название" name="name" required>
         </label>
         <label>Дата:
-            <input type="datetime-local"  name="date" required>
+            <input type="datetime-local" name="date" required>
         </label>
         <div class="checkedList">
             <label>Режиссеры:
@@ -139,7 +142,7 @@
             </label>
         </div>
         <label>Продолжительность в минутах
-            <input type="text" name="len" placeholder="Продолжительность (мин)"  required pattern="\d*">
+            <input type="text" name="len" placeholder="Продолжительность (мин)" required pattern="\d*">
         </label>
         <div class="digits">
             <div class="freedigits">

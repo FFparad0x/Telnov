@@ -32,7 +32,7 @@ public class Performance {
         return producers;
     }
 
-    public void setProducer( ArrayList<String>  producer) {
+    public void setProducer(ArrayList<String> producer) {
         this.producers = producers;
     }
 
@@ -98,7 +98,7 @@ public class Performance {
 
     Theatre theatre;
     String name;
-    ArrayList<String>  producers;
+    ArrayList<String> producers;
     ArrayList<String> actors;
     int length;
     int free_parter, free_balcony, free_beletage;
@@ -108,6 +108,7 @@ public class Performance {
     public Date getDate() {
         return date;
     }
+
     public String PrintActors() {
         String result = "";
         for (String actor : actors) {
@@ -115,6 +116,7 @@ public class Performance {
         }
         return result;
     }
+
     public String PrintProducers() {
         String result = "";
         for (String actor : producers) {
@@ -122,22 +124,25 @@ public class Performance {
         }
         return result;
     }
+
     public int getId() {
         return id;
     }
 
-    public Performance(){
+    public Performance() {
         id = IndexCounter.getPerformanceId();
         producers = new ArrayList<>();
         actors = new ArrayList<>();
     }
-    public Performance(Theatre theatre){
+
+    public Performance(Theatre theatre) {
         this();
         this.theatre = theatre;
 
 
     }
-    public void Fill(){
+
+    public void Fill() {
         length = 140;
         free_parter = 3;
         free_balcony = 7;
@@ -147,12 +152,13 @@ public class Performance {
         price_beletage = 300;
         date = new Date();
         name = randomString(12);
-        producers = (ArrayList<String>) theatre.actors.clone();
+        producers = (ArrayList<String>) theatre.producers.clone();
         actors = (ArrayList<String>) theatre.actors.clone();
     }
-    public Performance(Theatre theatre, Date date){
-       this(theatre);
-       this.date = date;
+
+    public Performance(Theatre theatre, Date date) {
+        this(theatre);
+        this.date = date;
     }
 
 

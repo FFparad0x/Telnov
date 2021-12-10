@@ -18,7 +18,7 @@
             response.getWriter().println("Создан театр");
         }
         response.getWriter().println(DataBase.theatres.size());
-        if(request.getParameter("add") != null){
+        if (request.getParameter("add") != null) {
             Theatre theatre = new Theatre();
             theatre.setName(request.getParameter("name"));
             theatre.setAddress(request.getParameter("address"));
@@ -34,7 +34,7 @@
 
             DataBase.theatres.add(theatre);
         }
-        if(request.getParameter("save") != null){
+        if (request.getParameter("save") != null) {
             int id = Integer.parseInt(request.getParameter("saveid"));
             Theatre theatre = DataBase.getTheatre(id);
             theatre.setName(request.getParameter("name"));
@@ -51,7 +51,7 @@
                 theatre.getActors().add(producers);
             }
         }
-        if(request.getParameter("delid") != null){
+        if (request.getParameter("delid") != null) {
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
 
         }
@@ -335,16 +335,15 @@
                                 }
                             }
                         }
-                        if(min == null){
+                        if (min == null) {
                             sDate = new Date();
                             eDate = new Date();
-                        }
-                        else {
+                        } else {
                             sDate = new Date(min);
                             eDate = new Date(max);
                         }
-                            data1 = formatter.format(sDate);
-                            data2 = formatter.format(eDate);
+                        data1 = formatter.format(sDate);
+                        data2 = formatter.format(eDate);
 
                     } else {
                         data1 = request.getParameter("dStart");
@@ -364,10 +363,10 @@
 </div>
 <%-- Тут вывод в таблицу--%>
 <%
-    if(true){ //TODO: if admin%>
-    <form action="Theatre.jsp" method="post">
-        <button type="submit" name="id" value="-1" class="jbtn">Добавить театр</button>
-    </form>
+    if (true) { //TODO: if admin%>
+<form action="Theatre.jsp" method="post">
+    <button type="submit" name="id" value="-1" class="jbtn">Добавить театр</button>
+</form>
 <% }
     if (DataBase.theatres != null) {
         if (theatresToShow == null) {
@@ -379,11 +378,11 @@
         <th>Адрес</th>
         <th>Количество мест</th>
         <% //TODO: if admin show that column
-        if(true){
-            %>
+            if (true) {
+        %>
         <th>Ред.</th>
         <%
-        }%>
+            }%>
     </tr>
 
     <%
@@ -400,9 +399,11 @@
         <td onclick="window.location = 'performances.jsp?id=<%=theatre.getId()%>'">
             <%=theatre.getNum_sum()%>
         </td>
-        <%// TODO: make login work again
-            if(true){%>
-                  <td class="Superb" onclick="window.location = 'Theatre.jsp?id=<%=theatre.getId()%>'">&#9998;</td>
+        <%
+            // TODO: make login work again
+            if (true) {
+        %>
+        <td class="Superb" onclick="window.location = 'Theatre.jsp?id=<%=theatre.getId()%>'">&#9998;</td>
 
         <%
             }
@@ -423,8 +424,6 @@
     }
 
 %>
-
-
 
 
 </body>

@@ -8,7 +8,7 @@ public class DataBase {
     public static ArrayList<Performance> performances;
 //    public static ArrayList<User> users; TODO: make user
 
-    public static void InitTheatre(int num){
+    public static void InitTheatre(int num) {
         theatres = new ArrayList<>();
         for (int i = 0; i < num; i++) {
             Theatre temp = new Theatre();
@@ -18,7 +18,7 @@ public class DataBase {
 
     }
 
-    public static Theatre getTheatre(int id){
+    public static Theatre getTheatre(int id) {
         for (Theatre theatre : theatres) {
             if (theatre.id == id) {
                 return theatre;

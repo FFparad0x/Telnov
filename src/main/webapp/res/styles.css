@@ -1,201 +1,228 @@
 
-
 .login {
-    float:right;
-    text-align:left;
+    float: right;
+    text-align: left;
 }
 
 .edit form {
     display: inline-grid;
 }
-.edit{
+
+.edit {
     text-align: center;
 }
-.edit label{
+
+.edit label {
     display: contents;
     margin: 2em;
 }
-.edit label textarea{
+
+.edit label textarea {
     width: fit-content;
 }
-.edit label input,textarea{
+
+.edit label input, textarea {
     width: auto;
     margin-bottom: 10px;
 }
-.mainsel{
+
+.mainsel {
     display: inline-flex;
 }
-.Content{
+
+.Content {
     margin: 0px 2em;
 
     overflow-y: visible;
 
 }
-.Content-Body{
+
+.Content-Body {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     max-height: 22vmin;
 
 }
+
 .jbtn {
-    margin:inherit;
+    margin: inherit;
     margin-right: 5px;
-    margin-bottom:5px;
-    margin-top:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     padding: 5px;
     font-family: Times-New-Roman;
-    background-color:#30476e;
-    border-radius:28px;
-    border:1px solid #30476e;
-    display:inline-block;
-    cursor:pointer;
-    padding:10px 20px;
-    text-decoration:none;
-    color:#ffffff;
-}
-.jbtn:hover {
-    margin:inherit;
-    margin-right: 5px;
-    margin-bottom:5px;
-    margin-top:5px;
-    background-color:#1a263b;
-    border-radius:14px;
-    border:1px solid #1a263b;
-    display:inline-block;
-    cursor:pointer;
-    padding:10px 20px;
-    text-decoration:none;
-    color:#ffffff;
-}
-.login a{
-    display:contents;
-    color:#30476e;
-    text-decoration:none;
-    padding:1px 6px 1px 6px ;
-}
-.login a:hover{
-    display:contents;
-    color:#ff7a40;
-    border:none;
-    text-decoration:none;
-    padding:1px 6px 1px 6px ;
-}
-.login button{
-    margin-top:1px;
-    background-color:#30476e;
-    float:left;
-    padding:0px 6px 1px 6px ;
-    border:none;
-    font-family:Times-New-Roman;
-    font-size:16px;
-    color:white;
+    background-color: #30476e;
     border-radius: 28px;
-    cursor:pointer;
+    border: 1px solid #30476e;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
 }
-.login button:hover{
-    background-color:#1a263b;
-    border-radius:5px;
-    cursor:pointer;
+
+.jbtn:hover {
+    margin: inherit;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: #1a263b;
+    border-radius: 14px;
+    border: 1px solid #1a263b;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
 }
-.fline{
-    display:flex;
+
+.login a {
+    display: contents;
+    color: #30476e;
+    text-decoration: none;
+    padding: 1px 6px 1px 6px;
 }
-.login:after{
-    display:block;
+
+.login a:hover {
+    display: contents;
+    color: #ff7a40;
+    border: none;
+    text-decoration: none;
+    padding: 1px 6px 1px 6px;
 }
+
+.login button {
+    margin-top: 1px;
+    background-color: #30476e;
+    float: left;
+    padding: 0px 6px 1px 6px;
+    border: none;
+    font-family: Times-New-Roman;
+    font-size: 16px;
+    color: white;
+    border-radius: 28px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #1a263b;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fline {
+    display: flex;
+}
+
+.login:after {
+    display: block;
+}
+
 .top ul {
     list-style: none;
     padding-left: 170px;
     margin: auto;
-    text-align:center;
-    display:inline;
+    text-align: center;
+    display: inline;
 }
+
 .top ul:after {
     content: "";
     display: table;
     clear: both;
 
 }
-.topmenu  {
+
+.topmenu {
 
 }
-.topmenu ul{
-    text-align:center;
-    margin:0;
+
+.topmenu ul {
+    text-align: center;
+    margin: 0;
 }
+
 .topmenu a {
     text-decoration: none;
     display: block;
 }
+
 .top li:hover > .submenu {
     visibility: visible;
     opacity: 1;
-    margin:inherit;
+    margin: inherit;
     margin-right: 5px;
     padding: 3px;
-    background-color:#30476e;
-    border-radius:14px;
-    border:1px solid #1a263b;
-    display:inline-block;
-    cursor:pointer;
-    padding:10px 20px;
-    text-decoration:none;
-    color:#ffffff;
+    background-color: #30476e;
+    border-radius: 14px;
+    border: 1px solid #1a263b;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .topmenu > li {
     position: relative;
-    text-align:center;
+    text-align: center;
     border-left: 1px solid black;
-    margin:inherit;
+    margin: inherit;
     margin-right: 5px;
     padding: 3px;
-    background-color:#30476e;
-    border-radius:28px;
-    border:1px solid #30476e;
-    display:inline-block;
-    cursor:pointer;
-    padding:10px 20px;
-    text-decoration:none;
-    color:#ffffff;
+    background-color: #30476e;
+    border-radius: 28px;
+    border: 1px solid #30476e;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
 }
+
 .topmenu > li:hover {
 
     position: relative;
     border-left: 1px solid black;
-    margin:inherit;
+    margin: inherit;
     margin-right: 5px;
     padding: 3px;
-    background-color:#1a263b;
-    border-radius:14px;
-    border:1px solid #1a263b;
-    display:inline-block;
-    cursor:pointer;
-    padding:10px 20px;
-    text-decoration:none;
-    color:#ffffff;
+    background-color: #1a263b;
+    border-radius: 14px;
+    border: 1px solid #1a263b;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
-.topmenu > li:first-child {border-left: 0;}
+.topmenu > li:first-child {
+    border-left: 0;
+}
+
 .topmenu > li > a {
-    color:#ffffff;
+    color: #ffffff;
     text-decoration: none;
 }
+
 .shapka {
-    text-align:center;
+    text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 span {
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 .shapka img {
-    display:inline-block;
-    height:60px;
+    display: inline-block;
+    height: 60px;
 }
 
 .footmenu {
-    text-align:center;
+    text-align: center;
     background-color: #1a263b;
     overflow: hidden;
     /*position:fixed;
@@ -213,8 +240,8 @@ span {
     display: block; /* Make the links appear below each other */
     padding: 5px; /* Add some padding */
     text-decoration: none; /* Remove underline from links */
-    vertical-align:center;
-    margin:0 20%;
+    vertical-align: center;
+    margin: 0 20%;
 }
 
 /* Change the color of links on hover */
@@ -229,17 +256,52 @@ span {
     color: #697282;
 }
 
-.selector{
+.selector {
     text-align: center;
 }
 
-table.iksweb{text-decoration: none;border-collapse:collapse;width:100%;text-align:center;border-radius:10px;margin-top:10px;overflow:hidden;}
-table.iksweb th{font-weight:normal;font-size:16px; color:#ffffff;background-color:#30476e;font-family: 'Roboto Slab', serif;}
-table.iksweb td{font-size:15px;color:#1a263b;font-family: 'Roboto Slab', serif;}
+table.iksweb {
+    text-decoration: none;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
 
-table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:10px 5px;line-height:15px;vertical-align: middle;border: 2px solid #30476e;}
-table.iksweb tr:hover {background-color:#f9fafb;  }
-table.iksweb tr:hover td{color:#588bb0;cursor:pointer; visibility: visible}
+table.iksweb th {
+    font-weight: normal;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #30476e;
+    font-family: 'Roboto Slab', serif;
+}
+
+table.iksweb td {
+    font-size: 15px;
+    color: #1a263b;
+    font-family: 'Roboto Slab', serif;
+}
+
+table.iksweb td, table.iksweb th {
+    white-space: pre-wrap;
+    padding: 10px 5px;
+    line-height: 15px;
+    vertical-align: middle;
+    border: 2px solid #30476e;
+}
+
+table.iksweb tr:hover {
+    background-color: #f9fafb;
+}
+
+table.iksweb tr:hover td {
+    color: #588bb0;
+    cursor: pointer;
+    visibility: visible
+}
+
 table.iksweb tr {
     text-align: center;
 }

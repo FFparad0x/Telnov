@@ -23,27 +23,32 @@
 <div class="edit">
     <form method="get" action="index.jsp">
 
-        <input  type="hidden" name="saveid" value="<%=temp.getId()%>">
-        <label for="1" >Название:
-        <input id="1" type="text" placeholder="Название" name="name" value="<%=temp.getName()%>" required>
-            </label>
+        <input type="hidden" name="saveid" value="<%=temp.getId()%>">
+        <label for="1">Название:
+            <input id="1" type="text" placeholder="Название" name="name" value="<%=temp.getName()%>" required>
+        </label>
         <label>Адрес:
             <input type="text" placeholder="Адрес" name="address" value="<%=temp.getAddress()%>" required>
         </label>
         <label>Режиссеры:
-            <textarea cols="50" rows="10" placeholder="producers" name="producersset" required><%=temp.PrintProducers()%></textarea>
+            <textarea cols="50" rows="10" placeholder="producers" name="producersset"
+                      required><%=temp.PrintProducers()%></textarea>
         </label>
         <label>Актёры:
-            <textarea cols="50" rows="10" placeholder="actors   " name="actorsset" required><%=temp.PrintActors()%></textarea>
+            <textarea cols="50" rows="10" placeholder="actors" name="actorsset"
+                      required><%=temp.PrintActors()%></textarea>
         </label>
-        <label>Кол-во  мест на балконе
-            <input type="text" placeholder="Название" name="balcony" value="<%=temp.getNum_balcon()%>" required pattern="\d*">
+        <label>Кол-во мест на балконе
+            <input type="text" placeholder="Название" name="balcony" value="<%=temp.getNum_balcon()%>" required
+                   pattern="\d*">
         </label>
         <label>Кол-во мест в партере
-            <input type="text" placeholder="Название" name="parter" value="<%=temp.getNum_parter()%>" required pattern="\d*">
+            <input type="text" placeholder="Название" name="parter" value="<%=temp.getNum_parter()%>" required
+                   pattern="\d*">
         </label>
         <label>Кол-во мест в бельэтаже
-            <input type="text" placeholder="Название" name="beletage" value="<%=temp.getNum_beletage()%>" required pattern="\d*">
+            <input type="text" placeholder="Название" name="beletage" value="<%=temp.getNum_beletage()%>" required
+                   pattern="\d*">
         </label>
         <div class="controls">
             <a href="index.jsp" class="jbtn">Назад</a>
@@ -65,7 +70,8 @@
             <input type="text" placeholder="Адрес" name="address">
         </label>
         <label>
-            <textarea cols="50" rows="10" placeholder="Продюссеры. Вводить по 1 на строку" name="producersset"></textarea>
+            <textarea cols="50" rows="10" placeholder="Продюссеры. Вводить по 1 на строку"
+                      name="producersset"></textarea>
         </label>
         <label>
             <textarea cols="50" rows="10" placeholder="Актеры. Вводить по 1 на строку" name="actorsset"></textarea>
