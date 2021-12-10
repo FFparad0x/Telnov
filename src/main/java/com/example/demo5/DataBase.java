@@ -30,5 +30,6 @@ public class DataBase {
         accounts = new ArrayList<>();
         Account AdminAcc = new Account("Admin", "asdf", true);
         accounts.add(AdminAcc);
+        Account.isAdmin = false;
     }
 }
