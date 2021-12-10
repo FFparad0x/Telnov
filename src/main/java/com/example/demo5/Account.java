@@ -4,19 +4,12 @@ package com.example.demo5;
 public class Account {
     private String login;
     private String password;
-    private int age;
-    private String email;
-
-    public boolean isAdmin() {
-        return admin;
-    }
-
     private boolean admin;
 
-    public Account(String login, String password, String email){
+    public Account(String login, String password, boolean admin){
         this.login = login;
         this.password = password;
-        admin = false;
+        this.admin = admin;
     }
 
     public void SetAdmin(){

@@ -28,5 +28,7 @@ public class DataBase {
     }
     public static void InitAccounts(){
         accounts = new ArrayList<>();
+        Account AdminAcc = new Account("Admin", "asdf", true);
+        accounts.add(AdminAcc);
     }
 }
