@@ -10,15 +10,17 @@ public class DataBase {
     public static ArrayList<Ticket> tickets;
 //    public static ArrayList<User> users; TODO: make user
 
-    public static void InitTheatre(int num){
+    public static void InitTheatre(int num) {
         theatres = new ArrayList<>();
         for (int i = 0; i < num; i++) {
-            theatres.add(new Theatre());
+            Theatre temp = new Theatre();
+            temp.Fill();
+            theatres.add(temp);
         }
 
     }
 
-    public static Theatre getTheatre(int id){
+    public static Theatre getTheatre(int id) {
         for (Theatre theatre : theatres) {
             if (theatre.id == id) {
                 return theatre;
