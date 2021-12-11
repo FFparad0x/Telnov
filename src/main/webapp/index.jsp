@@ -12,10 +12,21 @@
 <html>
 <head>
     <%
+        Cookie[] cookies = request.getCookies();
+        String cookieName = "status";
+        Cookie cookie = null;
+        if (cookies != null) {
+            for (Cookie c : cookies) {
+                if (cookieName.equals(c.getName())) {
+                    cookie = c;
+                    break;
+                }
+            }
+        }
         if (DataBase.theatres == null) {
             DataBase.InitTheatre(10);
         }
-        if (DataBase.accounts == null){
+        if (DataBase.accounts == null) {
             DataBase.InitAccounts();
         }
         ArrayList<Theatre> theatresToShow = null;
@@ -180,7 +191,7 @@
     <title>JSP - Hello World</title>
 </head>
 <style>
-    p{
+    p {
         color: red;
     }
 </style>
@@ -199,7 +210,7 @@
                 <a href='#'>Корзина</a>
             </li>
             <%
-                if (Account.isAdmin){%>
+                    if (cookie != null && cookie.getValue().equals("admin")) {%>
             <%="<li><a href = '#'>Редактировать</a></li>"%>
             <%
                 }
@@ -213,8 +224,14 @@
                 <!--<a href="authorization.jsp">Войти</a>-->
                 | <!--<a href='signup.php'>Регистрация</a>-->
                 <a href="registration.jsp">Регистрация</a>
+
+                <!--<button class='login' type='submit'>Войти</button>
+                <a href="authorization.jsp">Войти</a>-->
+                | <!--<a href='signup.php'>Регистрация</a>
+                <a href="registration.jsp">Регистрация</a>-->
+                <a href='#'>Выйти</a>
                 <%
-                    if (Account.status){%>
+                    if (Account.status) {%>
                 <%="<p>Неверный логин или пароль</p>"%>
                 <%
                     }

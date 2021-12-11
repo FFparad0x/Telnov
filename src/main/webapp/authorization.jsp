@@ -17,9 +17,17 @@
             isEqual = true;
             if (value1.equals("Admin")) {
                 Account.isAdmin = true;
+                Cookie cookie = new Cookie("status", "admin");
+                cookie.setMaxAge(24*60*60);
+                cookie.setPath("http://localhost:8080/demo5_war_exploded/index.jsp");
+                response.addCookie(cookie);
                 response.sendRedirect("index.jsp");
             } else {
                 Account.isAdmin = false;
+                Cookie cookie = new Cookie("status", "client");
+                cookie.setMaxAge(24*60*60);
+                cookie.setPath("http://localhost:8080/demo5_war_exploded/index.jsp");
+                response.addCookie(cookie);
                 response.sendRedirect("index.jsp");
             }
         }
