@@ -4,6 +4,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.stream.Collectors" %>
 <%@ page import="com.example.demo5.Performance" %>
+<%@ page import="com.example.demo5.Account" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.ParseException" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -178,6 +179,11 @@
 
     <title>JSP - Hello World</title>
 </head>
+<style>
+    p{
+        color: red;
+    }
+</style>
 <body>
 <div class="top">
     <div class="shapka">
@@ -192,6 +198,12 @@
             <li>
                 <a href='#'>Корзина</a>
             </li>
+            <%
+                if (Account.isAdmin){%>
+            <%="<li><a href = '#'>Редактировать</a></li>"%>
+            <%
+                }
+            %>
         </ul>
         <div class='login'>
             <form action='authorization.jsp' method='get' id='login'>
@@ -201,6 +213,12 @@
                 <!--<a href="authorization.jsp">Войти</a>-->
                 | <!--<a href='signup.php'>Регистрация</a>-->
                 <a href="registration.jsp">Регистрация</a>
+                <%
+                    if (Account.status){%>
+                <%="<p>Неверный логин или пароль</p>"%>
+                <%
+                    }
+                %>
             </form>
         </div>
     </div>
