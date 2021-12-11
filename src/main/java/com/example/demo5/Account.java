@@ -4,13 +4,14 @@ package com.example.demo5;
 public class Account {
     private String login;
     private String password;
-    private boolean admin = false;
+    private boolean admin;
+    public static boolean isAdmin;
+    public static boolean status;
 
     public Account(String login, String password, boolean admin){
         this.login = login;
         this.password = password;
         this.admin = admin;
-
     }
 
     public void SetAdmin(){

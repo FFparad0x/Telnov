@@ -31,7 +31,6 @@
             for (String producers : request.getParameter("actorsset").split("\n")) {
                 theatre.getActors().add(producers);
             }
-
             DataBase.theatres.add(theatre);
         }
         if (request.getParameter("save") != null) {
@@ -53,7 +52,6 @@
         }
         if (request.getParameter("delid") != null) {
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
-
         }
         if (DataBase.accounts == null){
             DataBase.InitAccounts();
@@ -62,9 +60,7 @@
         try {
             ArrayList<Theatre> searchResult = null;
             if (request.getParameter("theatres") != null) {
-
                 String[] parameters = request.getParameterMap().get("theatres");
-
                 ArrayList<Theatre> temp = new ArrayList<>();
                 for (int i = 0; i < parameters.length; i++) {
                     for (int j = 0; j < DataBase.theatres.size(); j++) {
@@ -76,8 +72,6 @@
                 searchResult = new ArrayList<>(temp);
                 response.getWriter().println(searchResult.size());
             }
-
-
             if (request.getParameter("producers") != null) {
                 if (searchResult == null) {
                     searchResult = new ArrayList<>();
@@ -117,7 +111,6 @@
                                     searchResult.add(theatre);
                                 }
                             }
-
                         }
                     }
                 } else {
@@ -129,7 +122,6 @@
                                     temp.add(theatre);
                                 }
                             }
-
                         }
                     }
                     searchResult.clear();
@@ -206,23 +198,21 @@
                 theatresToShow = DataBase.theatres;
             }
         } catch (Exception e) {
-
             response.getWriter().println("Все блять поиск не работает");
             for (StackTraceElement stackTraceElement : e.getStackTrace()) {
                 response.getWriter().println(stackTraceElement.toString() + "\n");
             }
         }
         response.getWriter().println(theatresToShow.size());
-
     %>
 
 
     <title>Концертная касса</title>
 </head>
 <body>
-  
+
 <jsp:include page="include/shapka.jsp"></jsp:include>
-  
+
 <div class="selector">  <%--TODO: id - element index. Set hidden input with search = 1  --%>
     <form action="index.jsp" method="get" class="mainsel">
         <input type="hidden" name="search" value="1">
@@ -233,7 +223,6 @@
             <div class="Content-Body">
                 <%
                     for (Theatre theatre : DataBase.theatres) {
-
                 %>
                 <div class="line">
                     <input type="checkbox" name="theatres" value="<%=theatre.getId()%>" id="<%=theatre.getId()%> "
@@ -273,7 +262,6 @@
             </div>
             <div class="Content-Body">
                 <% prod.clear();
-
                     for (Theatre theatre : DataBase.theatres) {
                         prod.addAll(theatre.getActors());
                     }
@@ -321,10 +309,8 @@
                     Date sDate, eDate;
                     String data1, data2;
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
                     if (request.getParameter("dStart") == null) {
                         for (Theatre theatre : DataBase.theatres) {
-
                             for (Performance performance : theatre.getPerformances()) {
                                 Long t = performance.getDate().getTime();
                                 if (min == null) {
@@ -349,13 +335,10 @@
                         }
                         data1 = formatter.format(sDate);
                         data2 = formatter.format(eDate);
-
                     } else {
                         data1 = request.getParameter("dStart");
                         data2 = request.getParameter("dEnd");
                     }
-
-
                 %>
                 <div class="line">
                     <input type="date" name="dStart" value="<%=data1%>">
@@ -427,7 +410,6 @@
 </table>
 <%
     }
-
 %>
 
 
