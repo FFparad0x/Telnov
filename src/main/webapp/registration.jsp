@@ -14,6 +14,9 @@
       Account account = new Account(value1, value2, false);
       DataBase.accounts.add(account);
       response.sendRedirect("index.jsp");
+//      if(){
+//        response.sendRedirect("#");
+//      }
     }
   %>
 </head>

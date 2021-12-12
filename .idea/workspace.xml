@@ -9,10 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0697845e-1745-492e-9d60-48a0609a6f7a" name="Changes" comment="Страница покупки билетов с css">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    <list default="true" id="0697845e-1745-492e-9d60-48a0609a6f7a" name="Changes" comment="aa">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="21hiFnuiaZel97ZiY58WUAqdUgm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -78,7 +82,7 @@
       <recent name="D:\Program Files\IdeaProjects\TelnovT\src\main\webapp\res" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.13">
     <configuration name="jsp.TestString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo5" />
       <extension name="coverage">
@@ -98,7 +102,7 @@
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/demo5_war_exploded/index.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 10.0.12" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.12" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 10.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <deployment>
         <artifact name="demo5:war exploded">
           <settings>
@@ -188,7 +192,7 @@
     <list>
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JUnit.jsp.TestString" />
-      <item itemvalue="Tomcat Server.Tomcat 10.0.12" />
+      <item itemvalue="Tomcat Server.Tomcat 10.0.13" />
     </list>
     <recent_temporary>
       <list>
@@ -200,7 +204,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="" />
+      <changelist id="0697845e-1745-492e-9d60-48a0609a6f7a" name="Changes" comment="aa" />
       <created>1638399619629</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -224,6 +228,8 @@
       <workItem from="1639242975503" duration="170000" />
       <workItem from="1639243173127" duration="3278000" />
       <workItem from="1639305537679" duration="8495000" />
+      <workItem from="1639325992848" duration="78000" />
+      <workItem from="1639329450250" duration="933000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -302,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639319203211</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="aa">
+      <created>1639321123161</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1639321123161</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +361,19 @@
     <MESSAGE value="Добавление/удаление Представлений без css" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="Страница покупки билетов с css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Страница покупки билетов с css" />
+    <MESSAGE value="aa" />
+    <option name="LAST_COMMIT_MESSAGE" value="aa" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/performances.jsp</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
