@@ -8,6 +8,10 @@ import java.util.Random;
 public class Performance {
     int id;
 
+    public ArrayList<String> getProducers() {
+        return producers;
+    }
+
     public int getPrice_parter() {
         return price_parter;
     }

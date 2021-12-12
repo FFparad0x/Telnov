@@ -17,7 +17,6 @@
             DataBase.InitTheatre(1);
             response.getWriter().println("Создан театр");
         }
-        response.getWriter().println(DataBase.theatres.size());
         if (request.getParameter("add") != null) {
             Theatre theatre = new Theatre();
             theatre.setName(request.getParameter("name"));
@@ -53,7 +52,7 @@
         if (request.getParameter("delid") != null) {
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
         }
-        if (DataBase.accounts == null){
+        if (DataBase.accounts == null) {
             DataBase.InitAccounts();
         }
         ArrayList<Theatre> theatresToShow = null;

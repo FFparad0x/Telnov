@@ -1,4 +1,17 @@
 
+
+.Info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.block {
+    margin: 0px 10px;
+    padding: 0px 5px;
+}
+.block h2 {
+    margin-bottom: auto;
+}
 .login {
     float: right;
     text-align: left;
