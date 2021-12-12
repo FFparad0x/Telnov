@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0697845e-1745-492e-9d60-48a0609a6f7a" name="Changes" comment="aa">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Добавил страницу заказов. Пора делать действия с логином">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,17 +23,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
         <option value="jsf" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="genri" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,6 +47,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="4554a4dc-a2e1-4b90-b1e4-9bf39acb161d" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -54,10 +57,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectId" id="21hiFnuiaZel97ZiY58WUAqdUgm" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -82,7 +85,7 @@
       <recent name="D:\Program Files\IdeaProjects\TelnovT\src\main\webapp\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.13">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.12">
     <configuration name="jsp.TestString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo5" />
       <extension name="coverage">
@@ -102,7 +105,7 @@
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/demo5_war_exploded/index.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 10.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 10.0.12" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.12" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <deployment>
         <artifact name="demo5:war exploded">
           <settings>
@@ -192,7 +195,7 @@
     <list>
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JUnit.jsp.TestString" />
-      <item itemvalue="Tomcat Server.Tomcat 10.0.13" />
+      <item itemvalue="Tomcat Server.Tomcat 10.0.12" />
     </list>
     <recent_temporary>
       <list>
@@ -204,7 +207,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0697845e-1745-492e-9d60-48a0609a6f7a" name="Changes" comment="aa" />
+      <changelist id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="" />
       <created>1638399619629</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -227,9 +230,7 @@
       <workItem from="1639154008862" duration="6794000" />
       <workItem from="1639242975503" duration="170000" />
       <workItem from="1639243173127" duration="3278000" />
-      <workItem from="1639305537679" duration="8495000" />
-      <workItem from="1639325992848" duration="78000" />
-      <workItem from="1639329450250" duration="933000" />
+      <workItem from="1639305537679" duration="14944000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -308,14 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639319203211</updated>
     </task>
-    <task id="LOCAL-00012" summary="aa">
-      <created>1639321123161</created>
+    <task id="LOCAL-00012" summary="id в аккаунте">
+      <created>1639320828064</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1639321123161</updated>
+      <updated>1639320828064</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Добавил страницу заказов. Пора делать действия с логином">
+      <created>1639326547324</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1639326547324</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +345,9 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="HEAD" />
+                        <option value="origin/genri" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -348,6 +358,24 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                  <option value="origin/genri" />
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="div improvement" />
@@ -361,25 +389,12 @@
     <MESSAGE value="Добавление/удаление Представлений без css" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="Страница покупки билетов с css" />
-    <MESSAGE value="aa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aa" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/performances.jsp</url>
-          <line>1</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="id в аккаунте" />
+    <MESSAGE value="Добавил страницу заказов. Пора делать действия с логином" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил страницу заказов. Пора делать действия с логином" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Telnov$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1638992794371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

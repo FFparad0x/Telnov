@@ -2,13 +2,13 @@ package com.example.demo5;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class DataBase {
     public static ArrayList<Theatre> theatres;
     public static ArrayList<Performance> performances;
     public static ArrayList<Account> accounts;
     public static ArrayList<Ticket> tickets;
-//    public static ArrayList<User> users; TODO: make user
 
     public static void InitTheatre(int num) {
         theatres = new ArrayList<>();
