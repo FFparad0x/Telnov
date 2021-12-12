@@ -3,7 +3,7 @@
 <%@ page import="com.example.demo5.DataBase" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>

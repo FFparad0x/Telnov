@@ -2,7 +2,7 @@
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page import="com.example.demo5.HelloServlet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page session="false" %>
 <%
     if (request.getParameter("llogin") != null && request.getParameter("lpass")!=null) {
         boolean isDouble = false;

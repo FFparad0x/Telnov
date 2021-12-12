@@ -7,9 +7,13 @@ public class Account {
     private String login;
     private String password;
     private boolean admin;
-    public static boolean isAdmin;
+    public static boolean isAdmin = false;
     public static boolean status;
-    private  ArrayList<Order> orders;
+    private ArrayList<Order> orders;
+
+    public int getId() {
+        return id;
+    }
 
     private int id;
 

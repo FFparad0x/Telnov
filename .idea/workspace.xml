@@ -10,9 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Добавил страницу заказов. Пора делать действия с логином">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +75,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Project" />
@@ -84,7 +92,7 @@
       <recent name="D:\Program Files\IdeaProjects\TelnovT\src\main\webapp\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.13">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.12">
     <configuration name="jsp.TestString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo5" />
       <extension name="coverage">
@@ -104,7 +112,7 @@
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/demo5_war_exploded/index.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 10.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 10.0.12" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.12" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="demo5:war exploded">
           <settings>
@@ -194,7 +202,7 @@
     <list>
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JUnit.jsp.TestString" />
-      <item itemvalue="Tomcat Server.Tomcat 10.0.13" />
+      <item itemvalue="Tomcat Server.Tomcat 10.0.12" />
     </list>
     <recent_temporary>
       <list>
@@ -231,6 +239,7 @@
       <workItem from="1639243173127" duration="3278000" />
       <workItem from="1639305537679" duration="14944000" />
       <workItem from="1639333322406" duration="1581000" />
+      <workItem from="1639339313210" duration="2816000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -375,6 +384,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="div improvement" />
@@ -391,6 +401,17 @@
     <MESSAGE value="id в аккаунте" />
     <MESSAGE value="Добавил страницу заказов. Пора делать действия с логином" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавил страницу заказов. Пора делать действия с логином" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/authorization.jsp</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

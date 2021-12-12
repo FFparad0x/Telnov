@@ -7,6 +7,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.ParseException" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,10 @@
             DataBase.InitTheatre(1);
             response.getWriter().println("Создан театр");
         }
+        if (DataBase.accounts == null){
+            DataBase.InitAccounts();
+        }
+
         response.getWriter().println(DataBase.theatres.size());
         if (request.getParameter("add") != null) {
             Theatre theatre = new Theatre();
@@ -53,9 +58,7 @@
         if (request.getParameter("delid") != null) {
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
         }
-        if (DataBase.accounts == null){
-            DataBase.InitAccounts();
-        }
+
         ArrayList<Theatre> theatresToShow = null;
         try {
             ArrayList<Theatre> searchResult = null;

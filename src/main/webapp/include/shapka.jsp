@@ -1,4 +1,6 @@
+<%@ page import="jakarta.servlet.http.Cookie" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page session="false" %>
 <meta charset="UTF-8">
 <div class="top">
     <div class="shapka">
@@ -15,23 +17,22 @@
             </li>
             <%
                 Cookie[] cookies = request.getCookies();
-                String cookieName = "status";
-                Cookie cookie = null;
-                if (cookies != null) {
-                    for (Cookie c : cookies) {
-                        if (cookieName.equals(c.getName())) {
-                            cookie = c;
-                            break;
-                        }
-                    }
-                }
-                if (cookie != null && cookie.getValue().equals("admin")) {%>
-            <%="<li><a href = '#'>Редактировать</a></li>"%>
-            <%
-                }
             %>
         </ul>
         <div class='login'>
+            <%
+
+                if (cookies != null) {
+
+            %>
+            <form action='authorization.jsp' method='post' id='login'>
+                <button class='login' type='submit'>Выйти</button>
+                <input name="exit" value="1" type="hidden">
+                <a href="registration.jsp">Регистрация</a>
+            </form>
+            <%
+            } else {
+            %>
             <form action='authorization.jsp' method='post' id='login'>
                 <input name='llogin' type='text' id='llogin' placeholder='Логин' required> <br>
                 <input name='lpass' type='password' id='lpass' placeholder='Пароль' required> <br>
@@ -39,6 +40,9 @@
                 | <!--<a href='signup.php'>Регистрация</a>-->
                 <a href="registration.jsp">Регистрация</a>
             </form>
+            <%
+                }
+            %>
         </div>
     </div>
 </div>
