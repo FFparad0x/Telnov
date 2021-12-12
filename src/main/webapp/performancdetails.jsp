@@ -30,7 +30,7 @@
         <input type="hidden" name="saveid" value="<%=performance.getId()%>">
         <p>Название: <%=performance.getName()%>
         </p>
-        <p>Дата: <input type="datetime-local" name="date" value="<%=format.format(time)%>"
+        <p>Начало: <input type="datetime-local" name="date" value="<%=format.format(time)%>"
                         readonly></p>
         <p>Продолжительность:<%=performance.getLength()%> минут</p>
         <div class="Info">
@@ -59,27 +59,25 @@
             </div>
         </div>
         <div class="Info">
-            <div class="block">
+            <div class="blockPrice">
                 <h2>Партер</h2>
                 <p>Кол-во свободных мест: <%=performance.getFree_parter()%>
                 <p>Цена: <%=performance.getPrice_parter()%>
-                </><p><a
-                    href="#" class="jbtn">Купить</a></p>
+                </> <p><input type="submit" form="parter" class="jbtn" value="Купить"></p>
             </div>
-            <div class="block">
+            <div class="blockPrice">
                 <h2>Бельэтаж</h2>
                 <p>Кол-во свободных мест: <%=performance.getFree_beletage()%>
                 </>
                 <p>Цена: <%=performance.getPrice_beletage()%>
-                </> <p><a
-                    href="#>" class="jbtn">Купить</a></p>
+                </> <p> <input type="submit" form="beletage" class="jbtn" value="Купить"></p>
             </div>
-            <div class="block">
+            <div class="blockPrice">
                 <h2>Балкон</h2>
                 <p>Кол-во свободных мест: <%=performance.getFree_balcony()%>
                 <p>Цена: <%=performance.getPrice_balcony() %>
                 </>
-                <p><a href="#" class="jbtn">Купить</a></p>
+                <p><input type="submit" form="balcony" class="jbtn" value="Купить"></p>
             </div>
         </div>
         <div class="controls">
@@ -87,6 +85,21 @@
         </div>
     </form>
 </div>
+<form id="parter" method="get" action="orders.jsp" >
+    <input type="hidden" name="buy" value="parter">
+    <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
+    <input type="hidden" name="perf" value="<%=performance.getId()%>">
+</form>
+<form id="beletage" method="post" action="orders.jsp">
+    <input type="hidden" name="buy" value="parter">
+    <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
+    <input type="hidden" name="perf" value="<%=performance.getId()%>">
+</form>
+<form id="balcony" method="post" action="orders.jsp">
+    <input type="hidden" name="buy" value="parter">
+    <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
+    <input type="hidden" name="perf" value="<%=performance.getId()%>">
+</form>
 <%
     }
 %>
