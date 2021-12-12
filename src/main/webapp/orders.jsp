@@ -15,6 +15,8 @@
 </head>
 <body>
 <jsp:include page="include/shapka.jsp"></jsp:include>
+<%
 
+%>
 </body>
 </html>

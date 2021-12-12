@@ -1,12 +1,16 @@
 package com.example.demo5;
 
 
+import java.util.ArrayList;
+
 public class Account {
     private String login;
     private String password;
     private boolean admin;
     public static boolean isAdmin;
     public static boolean status;
+    private  ArrayList<Order> orders;
+
     private int id;
 
     public Account(String login, String password, boolean admin){
@@ -14,6 +18,7 @@ public class Account {
         this.password = password;
         this.admin = admin;
         this.id = IndexCounter.getIdAccount();
+        this.orders = new ArrayList<>();
     }
 
     public void SetAdmin(){
