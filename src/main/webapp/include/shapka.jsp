@@ -3,6 +3,16 @@
 <%@ page session="false" %>
 <meta charset="UTF-8">
 <div class="top">
+    <%
+        boolean isClient = false;
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for (Cookie cookie : cookies) {
+                if(cookie.getName().equals("status") && cookie.getValue().equals("client"))
+                    isClient = true;
+            }
+        }
+    %>
     <div class="shapka">
         <img src="res/logo.png" alt="Здесь было лого, но его украли!">
         <hr>
@@ -12,12 +22,19 @@
             <li>
                 <a href='index.jsp'>Главное меню</a>
             </li>
+
+                <%
+                    if(isClient){
+                %>
             <li>
-                <a href='#'>Корзина</a>
+                <a href='orders.jsp'>История покупок</a>
             </li>
-            <%
-                Cookie[] cookies = request.getCookies();
-            %>
+
+                <%
+                    }
+                %>
+
+
         </ul>
         <div class='login'>
             <%
@@ -28,7 +45,6 @@
             <form action='authorization.jsp' method='post' id='login'>
                 <button class='login' type='submit'>Выйти</button>
                 <input name="exit" value="1" type="hidden">
-                <a href="registration.jsp">Регистрация</a>
             </form>
             <%
             } else {

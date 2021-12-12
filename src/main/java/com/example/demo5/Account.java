@@ -6,6 +6,15 @@ import java.util.ArrayList;
 public class Account {
     private String login;
     private String password;
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
+
     private boolean admin;
     public static boolean isAdmin = false;
     public static boolean status;

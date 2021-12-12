@@ -1,7 +1,7 @@
-<%@ page import="com.example.demo5.Theatre" %>
-<%@ page import="com.example.demo5.DataBase" %>
-<%@ page import="com.example.demo5.Performance" %>
-<%@ page import="com.example.demo5.Order" %><%--
+<%@ page import="jakarta.servlet.http.Cookie" %>
+<%@ page import="com.example.demo5.*" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 12.12.2021
@@ -9,6 +9,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="false" %>
 <html>
 <head>
     <link rel="stylesheet" href="res/styles.css">
@@ -19,12 +20,74 @@
 <body>
 <jsp:include page="include/shapka.jsp"></jsp:include>
 <%
-    if(request.getParameter("buy") != null){
+    if (request.getParameter("buy") != null) {
         Theatre theatre = DataBase.getTheatre(Integer.parseInt(request.getParameter("theatre")));
         Performance performance = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("perf")));
-        Order order = new Order(performance);
-
+        Order order = new Order(performance, request.getParameter("place"));
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("id")) {
+                    Account account = DataBase.getAccount(Integer.parseInt(cookie.getValue()));
+                    account.getOrders().add(order);
+                }
+            }
+        }
     }
+    Cookie[] cookies = request.getCookies();
 %>
+<h2>История покупок</h2>
+<table class="iksweb">
+    <tr>
+        <th>Дата покупки</th>
+        <th>Концерт</th>
+        <th>Дата представления</th>
+        <th>Вид места</th>
+    </tr>
+
+    <%
+        if (cookies != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("id")) {
+                    Account account = DataBase.getAccount(Integer.parseInt(cookie.getValue()));
+                    if (account.getOrders().size() > 0) {
+                        for (Order order : account.getOrders()) {
+                            Date temp = order.getDateOfOrder();
+                            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy mm:H");
+    %>
+    <tr>
+        <td>
+            <%=format.format(temp)%>
+        </td>
+        <td>
+            <%=order.getPerformance().getName()%>
+        </td>
+        <td>
+            <%=format.format(order.getPerformance().getDate())%>
+        </td>
+        <td>
+            <%=order.getPlaceType()%>
+        </td>
+    </tr>
+    <%
+        }
+        break;
+    } else {
+
+    %>
+    <tr>
+        <td colspan="4"> Вы еще не купили ни одного билета!</td>
+    </tr>
+    <%
+
+                        break;
+                    }
+                }
+            }
+        } else
+            response.sendRedirect("index.jsp");
+
+    %>
+</table>
 </body>
 </html>

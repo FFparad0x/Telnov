@@ -9,17 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Добавил страницу заказов. Пора делать действия с логином">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performances.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/res/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/res/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="4554a4dc-a2e1-4b90-b1e4-9bf39acb161d" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -239,7 +244,7 @@
       <workItem from="1639243173127" duration="3278000" />
       <workItem from="1639305537679" duration="14944000" />
       <workItem from="1639333322406" duration="1581000" />
-      <workItem from="1639339313210" duration="2816000" />
+      <workItem from="1639339313210" duration="10511000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -332,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639326547324</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!">
+      <created>1639342376308</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1639342376309</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,15 +412,16 @@
     <MESSAGE value="Страница покупки билетов с css" />
     <MESSAGE value="id в аккаунте" />
     <MESSAGE value="Добавил страницу заказов. Пора делать действия с логином" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил страницу заказов. Пора делать действия с логином" />
+    <MESSAGE value="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/authorization.jsp</url>
-          <line>11</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
+          <line>53</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

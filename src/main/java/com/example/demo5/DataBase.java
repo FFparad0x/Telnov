@@ -10,6 +10,7 @@ public class DataBase {
     public static ArrayList<Account> accounts;
     public static ArrayList<Ticket> tickets;
 
+
     public static void InitTheatre(int num) {
         theatres = new ArrayList<>();
         for (int i = 0; i < num; i++) {
@@ -34,5 +35,13 @@ public class DataBase {
         accounts.add(AdminAcc);
         Account userTest = new Account("1", "1", true);
         accounts.add(userTest);
+    }
+    public static Account getAccount(int id){
+        for (Account account : accounts) {
+            if(account.getId() == id){
+                return account;
+            }
+        }
+        return null;
     }
 }

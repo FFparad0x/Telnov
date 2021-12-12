@@ -3,6 +3,8 @@
 <%@ page import="com.example.demo5.Performance" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.GregorianCalendar" %>
+<%@ page import="java.util.Calendar" %>
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -16,82 +18,101 @@
     Integer id = Integer.parseInt(request.getParameter("id"));
     Integer theatreId = Integer.parseInt(request.getParameter("theatre"));
     Theatre theatre = DataBase.getTheatre(theatreId);
+    String timeS = "";
     if (id != null && theatreId != null) {
         if (id >= 0) {
             Performance temp = DataBase.getTheatre(theatreId).GetPerformanceById(id);
             Date time = temp.getDate();
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
+            Calendar calendar = GregorianCalendar.getInstance();
+            calendar.setTime(time);
+            timeS = format.format(time);
+            if (calendar.get(Calendar.HOUR_OF_DAY) < 10) {
+                timeS = timeS.split("T")[0] + "T0" + timeS.split("T")[1];
+            }
+
 %>
 <div class="edit">
     <form method="get" action="performances.jsp">
         <input type="hidden" name="id" value="<%=theatre.getId()%>">
         <input type="hidden" name="saveid" value="<%=temp.getId()%>">
-        <label for="1">Название:
-            <input id="1" type="text" placeholder="Название" name="name" value="<%=temp.getName()%>" required>
-        </label>
-        <label>Дата:
-            <input type="datetime-local" name="date" value="<%=format.format(time)%>"
-                   required>
-        </label>
-
-        <label>Режиссеры:
-            <%
-                for (String producer : theatre.getProducers()) {%>
-            <div class="line">
-                <input type="checkbox" name="producers" value="<%=producer%>"
-                    <%
+        <div class="details">
+            <label for="1">Название:
+                <input id="1" type="text" placeholder="Название" name="name" value="<%=temp.getName()%>" required>
+            </label>
+            <label>Дата:
+                <input type="datetime-local" name="date" value="<%=timeS%>"
+                       required>
+            </label><br>
+            <label>Продолжительность в минутах
+                <input type="text" name="len" placeholder="Продолжительность (мин)" required pattern="\d*"
+                       value="<%=temp.getLength()%>">
+            </label><br>
+        </div>
+        <div class="Info" style="text-align: left">
+            <div class="block">
+                <p>Режиссеры:</p>
+                <%
+                    for (String producer : theatre.getProducers()) {%>
+                <div class="line">
+                    <input type="checkbox" name="producers" value="<%=producer%>"
+                        <%
                          if(temp.getProducer().contains(producer)){
                 %>
-                       checked <%}%>> <%=producer%>
+                           checked <%}%>> <%=producer%>
+                </div>
+                <%
+                    }
+                %>
             </div>
-            <%
-                }
-            %>
-        </label>
-        <label>Актёры:
-            <%
-                for (String actor : theatre.getActors()) {%>
-            <div class="line">
-                <input type="checkbox" name="actors" value="<%=actor%>"
-                    <%
+            <div class="block">
+                <p>Актёры:</p>
+                <%
+                    for (String actor : theatre.getActors()) {%>
+                <div class="line">
+                    <input type="checkbox" name="actors" value="<%=actor%>"
+                        <%
                         if(temp.getActors().contains(actor)){
                 %>
-                       checked<%}%> > <%=actor%>
+                           checked<%}%> > <%=actor%>
+                </div>
+                <%
+                    }
+                %>
             </div>
-            <%
-                }
-            %>
-        </label>
-        <label>Продолжительность в минутах
-            <input type="text" name="len" placeholder="Продолжительность (мин)" required pattern="\d*"
-                   value="<%=temp.getLength()%>">
-        </label>
-        <div class="digits">
-            <div class="freedigits">
-                <label>Кол-во свободных мест в партере
+        </div>
+
+        <div class="Info">
+            <div class="blockPrice">
+                <h2>Партер</h2>
+                <label>Кол-во свободных мест
                     <input type="text" placeholder="Кол-во" name="freeparter" value="<%=temp.getFree_parter()%>"
                            required
                            pattern="\d*">
-                </label>
-                <label>Кол-во свободных мест в бельэтаже
-                    <input type="text" placeholder="Кол-во" name="freebeletage" value="<%=temp.getFree_beletage()%>"
-                           required pattern="\d*">
-                </label>
-                <label>Кол-во свободных мест на балконе
-                    <input type="text" placeholder="Кол-во" name="freebalcony" value="<%=temp.getFree_balcony()%>"
-                           required pattern="\d*">
-                </label>
-            </div>
-            <div class="freedigits">
-                <label>Цена места в партере
+                </label><br>
+                <label>Цена
                     <input type="text" placeholder="Цена" name="parter" value="<%=temp.getPrice_parter()%>" required
                            pattern="\d*">
                 </label>
-                <label>Цена места в бельэтаже
+            </div>
+            <div class="blockPrice">
+                <h2>Бэльэтаж</h2>
+                <label>Кол-во свободных мест
+                    <input type="text" placeholder="Кол-во" name="freebeletage" value="<%=temp.getFree_beletage()%>"
+                           required pattern="\d*">
+                </label><br>
+                <label>Цена
                     <input type="text" placeholder="Цена" name="beletage" value="<%=temp.getPrice_beletage()%>"
                            required pattern="\d*">
                 </label>
-                <label>Цена местана балконе
+            </div>
+            <div class="blockPrice">
+                <h2>Балкон</h2>
+                <label>Кол-во свободных мест
+                    <input type="text" placeholder="Кол-во" name="freebalcony" value="<%=temp.getFree_balcony()%>"
+                           required pattern="\d*">
+                </label><br>
+                <label>Цена
                     <input type="text" placeholder="Цена" name="balcony" value="<%=temp.getPrice_balcony() %>"
                            required pattern="\d*">
                 </label>
@@ -113,14 +134,20 @@
     <form method="get" action="performances.jsp">
         <input type="hidden" name="id" value="<%=theatre.getId()%>">
         <input type="hidden" name="add" value="1">
-        <label>Название:
-            <input type="text" placeholder="Название" name="name" required>
-        </label>
-        <label>Дата:
-            <input type="datetime-local" name="date" required>
-        </label>
-        <div class="checkedList">
-            <label>Режиссеры:
+        <div class="details">
+            <label>Название:
+                <input type="text" placeholder="Название" name="name" required>
+            </label>
+            <label>Дата:
+                <input type="datetime-local" name="date" required>
+            </label>
+            <label>Продолжительность в минутах:
+                <input type="text" name="len" placeholder="Продолжительность (мин)" required pattern="\d*">
+            </label><br>
+        </div>
+        <div class="Info">
+            <div class="block">
+                <p>Режиссеры: </p>
                 <%
                     for (String producer : theatre.getProducers()) {%>
                 <div class="line">
@@ -129,8 +156,10 @@
                 <%
                     }
                 %>
-            </label>
-            <label>Актёры:
+
+            </div>
+            <div class="block">
+                <p>Актёры: </p>
                 <%
                     for (String actor : theatre.getActors()) {%>
                 <div class="line">
@@ -139,33 +168,37 @@
                 <%
                     }
                 %>
-            </label>
-        </div>
-        <label>Продолжительность в минутах
-            <input type="text" name="len" placeholder="Продолжительность (мин)" required pattern="\d*">
-        </label>
-        <div class="digits">
-            <div class="freedigits">
-                <label>Кол-во свободных мест в партере
-                    <input type="text" placeholder="Кол-во" name="freeparter" required pattern="\d*">
-                </label>
-                <label>Кол-во свободных мест в бельэтаже
-                    <input type="text" placeholder="Кол-во" name="freebeletage" required pattern="\d*">
-                </label>
-                <label>Кол-во свободных мест на балконе
-                    <input type="text" placeholder="Кол-во" name="freebalcony" required pattern="\d*">
-                </label>
+                </p>
             </div>
-            <div class="freedigits">
-                <label>Цена места в партере
+        </div>
+
+        <div class="Info">
+            <div class="blockPrice">
+                <h2>Партер</h2>
+                <label>Кол-во свободных мест
+                    <input type="text" placeholder="Кол-во" name="freeparter" required pattern="\d*">
+                </label><br>
+                <label>Цена места
                     <input type="text" placeholder="Цена" name="parter" required
                            pattern="\d*">
                 </label>
-                <label>Цена места в бельэтаже
+            </div>
+            <div class="blockPrice">
+                <h2>Бэльэтаж</h2>
+                <label>Кол-во свободных мест
+                    <input type="text" placeholder="Кол-во" name="freebeletage" required pattern="\d*">
+                </label><br>
+                <label>Цена места
                     <input type="text" placeholder="Цена" name="beletage"
                            required pattern="\d*">
                 </label>
-                <label>Цена местана балконе
+            </div>
+            <div class="blockPrice">
+                <h2>Балкон</h2>
+                <label>Кол-во свободных мест
+                    <input type="text" placeholder="Кол-во" name="freebalcony" required pattern="\d*">
+                </label><br>
+                <label>Цена места
                     <input type="text" placeholder="Цена" name="balcony"
                            required pattern="\d*">
                 </label>

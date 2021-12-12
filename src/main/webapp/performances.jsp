@@ -4,7 +4,8 @@
 <%@ page import="com.example.demo5.Performance" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="jakarta.servlet.http.Cookie" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 05.12.2021
@@ -21,6 +22,16 @@
 <body>
 <jsp:include page="include/shapka.jsp"></jsp:include>
 <%
+    boolean admin = false;
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie cookie : request.getCookies()) {
+            if (cookie.getName().equals("status") && cookie.getValue().equals("admin")) {
+                admin = true;
+                break;
+            }
+        }
+    }
     Theatre theatre = null;
     if (request.getParameter("id") != null) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -35,13 +46,19 @@
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
         temp.setDate(format.parse(request.getParameter("date")));
         temp.getProducer().clear();
-        for (String producer : param.get("producers")) {
-            temp.getProducer().add(producer);
-        }
+        if(param.get("producers") != null)
+            for (String producer : param.get("producers")) {
+                temp.getProducer().add(producer);
+            }
+        else
+            temp.getProducer().add("");
         temp.getActors().clear();
-        for (String producer : param.get("actors")) {
-            temp.getActors().add(producer);
-        }
+        if(param.get("actors") != null)
+            for (String producer : param.get("actors")) {
+                temp.getActors().add(producer);
+            }
+        else
+            temp.getActors().add("");
         temp.setFree_parter(Integer.parseInt(request.getParameter("freeparter")));
         temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")));
         temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")));
@@ -58,19 +75,20 @@
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
         temp.setDate(format.parse(request.getParameter("date")));
         temp.getProducer().clear();
+        if(param.get("producers") != null)
         for (String producer : param.get("producers")) {
             temp.getProducer().add(producer);
         }
-        if (temp.getProducer().size() == 0) {
-            temp.getProducer().add("Вы забыли выбрать режиссера при добавлении");
-        }
+        else
+            temp.getProducer().add("");
         temp.getActors().clear();
+        if(param.get("actors") != null)
         for (String producer : param.get("actors")) {
             temp.getActors().add(producer);
         }
-        if (temp.getActors().size() == 0) {
-            temp.getActors().add("Вы забыли выбрать актеров при добавлении");
-        }
+        else
+            temp.getActors().add("");
+
         temp.setFree_parter(Integer.parseInt(request.getParameter("freeparter")));
         temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")));
         temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")));
@@ -92,7 +110,7 @@
 %>
 <%-- Тут вывод в таблицу--%>
 <%
-    if (true) { //TODO: if admin%>
+    if (admin) {%>
 <form action="Performance.jsp" method="post">
     <button type="submit" name="id" value="-1" class="jbtn">Добавить представление</button>
     <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
@@ -112,8 +130,8 @@
         <th>Партер ₽</th>
         <th>Балкон ₽</th>
         <th>Бельэтаж ₽</th>
-        <% //TODO: if admin show that column
-            if (true) {
+        <%
+            if (admin) {
         %>
         <th>Ред.</th>
         <%
@@ -147,10 +165,9 @@
             <%=performance.getPrice_beletage()%>
         </td>
         <%
-            // TODO: make login work again
-            if (true) {
+
+            if (admin) {
         %>
-        <%--        TODO: make edit perfomance--%>
         <td class="Superb"
             onclick="window.location = 'Performance.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">
             &#9998;

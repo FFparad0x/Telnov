@@ -1,11 +1,23 @@
 .controls{
     margin: 10px;
 }
+.details{
+    text-align: center;
+    display: flex;
+    margin: 15px 26vw;
+    flex-direction: column;
+}
+.edit .details{
 
+}
 .Info{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.Info .block{
+    text-align: left;
 }
 .block {
     margin: 0px 10px;

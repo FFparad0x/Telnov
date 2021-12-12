@@ -6,6 +6,7 @@
 <%@ page import="com.example.demo5.Performance" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.ParseException" %>
+<%@ page import="jakarta.servlet.http.Cookie" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
@@ -18,10 +19,19 @@
             DataBase.InitTheatre(1);
             response.getWriter().println("Создан театр");
         }
-        if (DataBase.accounts == null){
+        if (DataBase.accounts == null) {
             DataBase.InitAccounts();
         }
-
+        boolean admin = false;
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("status") && cookie.getValue().equals("admin")) {
+                    admin = true;
+                    break;
+                }
+            }
+        }
         response.getWriter().println(DataBase.theatres.size());
         if (request.getParameter("add") != null) {
             Theatre theatre = new Theatre();
@@ -216,7 +226,7 @@
 
 <jsp:include page="include/shapka.jsp"></jsp:include>
 
-<div class="selector">  <%--TODO: id - element index. Set hidden input with search = 1  --%>
+<div class="selector">
     <form action="index.jsp" method="get" class="mainsel">
         <input type="hidden" name="search" value="1">
         <div class="Content">
@@ -354,11 +364,13 @@
 </div>
 <%-- Тут вывод в таблицу--%>
 <%
-    if (true) { //TODO: if admin%>
+    if(admin){
+%>
 <form action="Theatre.jsp" method="post">
     <button type="submit" name="id" value="-1" class="jbtn">Добавить театр</button>
 </form>
-<% }
+<%
+    }
     if (DataBase.theatres != null) {
         if (theatresToShow == null) {
             theatresToShow = DataBase.theatres;
@@ -368,8 +380,8 @@
         <th>Название</th>
         <th>Адрес</th>
         <th>Количество мест</th>
-        <% //TODO: if admin show that column
-            if (true) {
+        <%
+            if (admin) {
         %>
         <th>Ред.</th>
         <%
@@ -391,8 +403,8 @@
             <%=theatre.getNum_sum()%>
         </td>
         <%
-            // TODO: make login work again
-            if (true) {
+
+            if (admin) {
         %>
         <td class="Superb" onclick="window.location = 'Theatre.jsp?id=<%=theatre.getId()%>'">&#9998;</td>
 

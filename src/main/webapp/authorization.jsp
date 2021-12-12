@@ -27,7 +27,7 @@
             if (value1.equals(account.getLogin()) && value2.equals(account.getPassword())) {
                 //response.sendRedirect("performances.jsp");
                 isEqual = true;
-                if (value1.equals("Admin")) {
+                if (account.isAdmin()) {
                     Account.isAdmin = true;
                     Cookie cookie = new Cookie("status", "admin");
                     Cookie cookie1 = new Cookie("id", String.valueOf(account.getId()));

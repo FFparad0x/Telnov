@@ -4,6 +4,8 @@
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.GregorianCalendar" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="false" %>
 <html>
@@ -23,7 +25,14 @@
         theatre = DataBase.getTheatre(Integer.parseInt(request.getParameter("theatre")));
         performance = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("id")));
         Date time = performance.getDate();
+        Calendar calendar = GregorianCalendar.getInstance();
+        calendar.setTime(time);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
+        String timeS = format.format(time);
+        if(calendar.get(Calendar.HOUR_OF_DAY) < 10)
+           timeS = timeS.split("T")[0] + "T0" + timeS.split("T")[1];
+
+        response.getWriter().println(format.format(time));
 %>
 <div class="edit">
     <form method="get" action="performances.jsp">
@@ -31,7 +40,7 @@
         <input type="hidden" name="saveid" value="<%=performance.getId()%>">
         <p>Название: <%=performance.getName()%>
         </p>
-        <p>Начало: <input type="datetime-local" name="date" value="<%=format.format(time)%>"
+        <p>Начало: <input type="datetime-local" name="date" value="<%=timeS%>"
                         readonly></p>
         <p>Продолжительность:<%=performance.getLength()%> минут</p>
         <div class="Info">
@@ -90,16 +99,19 @@
     <input type="hidden" name="buy" value="parter">
     <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
     <input type="hidden" name="perf" value="<%=performance.getId()%>">
+    <input type="hidden" name="place" value="Партер">
 </form>
 <form id="beletage" method="post" action="orders.jsp">
     <input type="hidden" name="buy" value="parter">
     <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
     <input type="hidden" name="perf" value="<%=performance.getId()%>">
+    <input type="hidden" name="place" value="Бельэтаж">
 </form>
 <form id="balcony" method="post" action="orders.jsp">
     <input type="hidden" name="buy" value="parter">
     <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
     <input type="hidden" name="perf" value="<%=performance.getId()%>">
+    <input type="hidden" name="place" value="Балкон">
 </form>
 <%
     }
