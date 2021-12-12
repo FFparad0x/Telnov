@@ -12,7 +12,8 @@
                 <a href='index.jsp'>Главное меню</a>
             </li>
             <li>
-                <a href='#'>Корзина</a>
+<%--                TODO:if logined--%>
+                <a href='#'>Зазазы</a>
             </li>
             <%
                 Cookie[] cookies = request.getCookies();
