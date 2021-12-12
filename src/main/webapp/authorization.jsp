@@ -20,16 +20,17 @@
                 Account.isAdmin = true;
                 Cookie cookie = new Cookie("status", "admin");
                 cookie.setMaxAge(24*60*60);
-                cookie.setPath("http://localhost:8080/demo5_war_exploded/index.jsp");
+                cookie.setPath("http://localhost:8080/demo5_war_exploded/");
                 response.addCookie(cookie);
                 response.sendRedirect("index.jsp");
             } else {
                 Account.isAdmin = false;
                 Cookie cookie = new Cookie("status", "client");
                 cookie.setMaxAge(24*60*60);
-                cookie.setPath("http://localhost:8080/demo5_war_exploded/index.jsp");
+                cookie.setPath("http://localhost:8080/demo5_war_exploded/");
                 response.addCookie(cookie);
                 response.sendRedirect("index.jsp");
+
             }
         }
     }
