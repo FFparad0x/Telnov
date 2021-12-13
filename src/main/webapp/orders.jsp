@@ -20,6 +20,8 @@
 </head>
 <body>
 <%@ include file = "include/shapka.jsp" %>
+<h2 style="text-align: center">История покупок</h2>
+
 <%
     if (request.getParameter("buy") != null) {
         Theatre theatre = DataBase.getTheatre(Integer.parseInt(request.getParameter("theatre")));
@@ -41,13 +43,18 @@
                 if (cookie.getName().equals("id")) {
                     Account account = DataBase.getAccount(Integer.parseInt(cookie.getValue()));
                     account.getOrders().add(order);
+
+                    %>
+<h3 style="color: rgba(62,190,68,0.87);text-align: center">Билет куплен</h3>
+<%
+
                 }
             }
         }
     }
     Cookie[] cookies = request.getCookies();
 %>
-<h2>История покупок</h2>
+
 <table class="iksweb">
     <tr>
         <th>Дата покупки</th>

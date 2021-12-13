@@ -22,7 +22,6 @@
 </head>
 
 <body>
-<%@ include file = "include/shapka.jsp" %>
 <div class="top">
   <div class="shapka">
     <img src="res/logo.png" alt="Здесь было лого, но его украли!">

@@ -57,9 +57,9 @@
             }
         else
             temp.getActors().add("");
-        temp.setFree_parter(Integer.parseInt(request.getParameter("freeparter")));
-        temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")));
-        temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")));
+        temp.setFree_parter( Integer.parseInt(request.getParameter("freeparter")) < theatre.getNum_parter() ?  Integer.parseInt(request.getParameter("freeparter")):  theatre.getNum_parter());
+        temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")) < theatre.getNum_balcon() ?  Integer.parseInt(request.getParameter("freebalcony")):  theatre.getNum_balcon());
+        temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")) < theatre.getNum_beletage() ?  Integer.parseInt(request.getParameter("freebeletage")):  theatre.getNum_beletage());
         temp.setPrice_balcony(Integer.parseInt(request.getParameter("balcony")));
         temp.setPrice_beletage(Integer.parseInt(request.getParameter("beletage")));
         temp.setLength(Integer.parseInt(request.getParameter("len")));
@@ -87,9 +87,9 @@
         else
             temp.getActors().add("");
 
-        temp.setFree_parter(Integer.parseInt(request.getParameter("freeparter")));
-        temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")));
-        temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")));
+        temp.setFree_parter( Integer.parseInt(request.getParameter("freeparter")) < theatre.getNum_parter() ?  Integer.parseInt(request.getParameter("freeparter")):  theatre.getNum_parter());
+        temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")) < theatre.getNum_balcon() ?  Integer.parseInt(request.getParameter("freebalcony")):  theatre.getNum_balcon());
+        temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")) < theatre.getNum_beletage() ?  Integer.parseInt(request.getParameter("freebeletage")):  theatre.getNum_beletage());
         temp.setPrice_balcony(Integer.parseInt(request.getParameter("balcony")));
         temp.setPrice_beletage(Integer.parseInt(request.getParameter("beletage")));
         temp.setPrice_parter(Integer.parseInt(request.getParameter("parter")));

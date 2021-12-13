@@ -29,6 +29,18 @@
     border: 1px solid #30476e;
     border-radius: 4px;
 }
+.blockPrice h3{
+    background-color:#B56E5E ;
+    border-radius: 28px;
+    border: 1px solid ;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: small;
+}
 .block h2 {
     margin-bottom: auto;
 }
@@ -129,7 +141,7 @@
     margin-top: 1px;
     background-color: #30476e;
     float: left;
-    padding: 0px 6px 1px 6px;
+    padding: 4px 8px 4px 8px;
     border: none;
     font-family: Times-New-Roman;
     font-size: 16px;

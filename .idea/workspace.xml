@@ -9,20 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Поебался с кодировкой, сделал так, чтобы логин перебрасывал на ту же страницу где и был совершен выход">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performances.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/res/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/res/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +243,7 @@
       <workItem from="1639333322406" duration="1581000" />
       <workItem from="1639339313210" duration="10829000" />
       <workItem from="1639391661151" duration="4336000" />
-      <workItem from="1639398379447" duration="3573000" />
+      <workItem from="1639398379447" duration="7448000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -355,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639351192824</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Поебался с кодировкой, сделал так, чтобы логин перебрасывал на ту же страницу где и был совершен выход">
+      <created>1639408055973</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1639408055973</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,24 +427,25 @@
     <MESSAGE value="Добавил страницу заказов. Пора делать действия с логином" />
     <MESSAGE value="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!" />
     <MESSAGE value="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой" />
-    <option name="LAST_COMMIT_MESSAGE" value="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой" />
+    <MESSAGE value="Поебался с кодировкой, сделал так, чтобы логин перебрасывал на ту же страницу где и был совершен выход" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поебался с кодировкой, сделал так, чтобы логин перебрасывал на ту же страницу где и был совершен выход" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>65</line>
+          <line>72</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>62</line>
+          <line>69</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>59</line>
+          <line>66</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>

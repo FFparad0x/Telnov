@@ -7,6 +7,7 @@
 
     <%
         response.setCharacterEncoding("utf-8");
+        boolean isLogin = false;
         if(request.getParameter("exit")!=null || request.getParameter("llogin") != null) {
             boolean isEqual = false;
             if (request.getParameter("exit") != null) {
@@ -16,8 +17,8 @@
                     o.setValue(null);
                     response.addCookie(o);
                 }
+                isEqual = true;
             }
-            boolean isLogin =false;
             String value1 = request.getParameter("llogin");
             String value2 = request.getParameter("lpass");
             if (value1 != null) {
@@ -26,7 +27,6 @@
 
                     if (value1.equals(account.getLogin()) && value2.equals(account.getPassword())) {
                         //response.sendRedirect("performances.jsp");
-                        isEqual = true;
                         if (account.isAdmin()) {
                             Account.isAdmin = true;
                             Cookie cookie = new Cookie("status", "admin");
@@ -36,7 +36,9 @@
 //                cookie.setPath("http://localhost:8080/demo5_war_exploded/");
                             response.addCookie(cookie);
                             response.addCookie(cookie1);
-                            isLogin = true;
+                            isLogin = false;
+                            isEqual = true;
+                            break;
                         } else {
                             Account.isAdmin = false;
                             Cookie cookie = new Cookie("status", "client");
@@ -47,17 +49,22 @@
                             response.addCookie(cookie);
                             response.addCookie(cookie1);
                             isLogin = false;
+                            isEqual = true;
+                            break;
                         }
                     }
                 }
+                isLogin = true;
+
             }
 
 
-            if (!isEqual) {
+            if (isEqual) {
                 Account.status = true;
+                response.setIntHeader("Refresh", 0);
+                return;
             }
-            response.sendRedirect("index.jsp");
-            return;
+
         }
 
     %>
@@ -107,6 +114,11 @@
             </form>
             <%
             } else {
+                if(isLogin){
+                    %>
+            <span style="color: red; font-size: smaller">Неверный логин или пароль</span>
+            <%
+                }
             %>
             <form action='' method='post' id='login'>
                 <input name='llogin' type='text' id='llogin' placeholder='Логин' required> <br>

@@ -20,6 +20,16 @@
 <%
     Theatre theatre;
     Performance performance;
+    boolean logged = false;
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie cookie : request.getCookies()) {
+            if (cookie.getName().equals("status")) {
+                logged = true;
+                break;
+            }
+        }
+    }
 
     if (request.getParameter("theatre") != null && request.getParameter("id") != null) {
         theatre = DataBase.getTheatre(Integer.parseInt(request.getParameter("theatre")));
@@ -75,6 +85,7 @@
                 <p>Цена: <%=performance.getPrice_parter()%>
                 </>
                 <p><%
+                    if(logged){
                     if(performance.getFree_parter() > 0){
                 %>
                     <input type="submit" form="parter" class="jbtn" value="Купить"></p>
@@ -86,6 +97,12 @@
                 <h3>Билеты распроданы</h3></>
             <%
                 }
+                }
+                    else{
+            %>
+            <h3 >Зарегистрируйтесь чтобы купить</h3></>
+            <%
+                }
             %>
             </div>
             <div class="blockPrice">
@@ -95,6 +112,7 @@
                 <p>Цена: <%=performance.getPrice_beletage()%>
                 </>
                 <p><%
+                    if(logged){
                     if(performance.getFree_beletage() > 0){
                 %>
                     <input type="submit" form="beletage" class="jbtn" value="Купить"></p>
@@ -106,7 +124,13 @@
                 <h3>Билеты распроданы</h3></>
             <%
                 }
+                }
+                else{
             %>
+<h3 >Зарегистрируйтесь чтобы купить</h3></>
+<%
+    }
+%>
             </div>
             <div class="blockPrice">
                 <h2>Балкон</h2>
@@ -114,6 +138,7 @@
                 <p>Цена: <%=performance.getPrice_balcony() %>
                 </>
                 <p><%
+                    if(logged){
                     if(performance.getFree_balcony() > 0){
                 %>
                     <input type="submit" form="balcony" class="jbtn" value="Купить"></p>
@@ -125,7 +150,13 @@
                 <h3>Билеты распроданы</h3></>
                 <%
                     }
+                    }
+                    else{
                 %>
+<h3 >Зарегистрируйтесь чтобы купить</h3></>
+<%
+    }
+%>
             </div>
         </div>
         <div class="controls">
