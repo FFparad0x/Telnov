@@ -2,7 +2,7 @@
 <%@ page import="com.example.demo5.Account" %>
 <%@ page import="com.example.demo5.DataBase" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,9 @@
     }
   %>
 </head>
+
 <body>
+<%@ include file = "include/shapka.jsp" %>
 <div class="top">
   <div class="shapka">
     <img src="res/logo.png" alt="Здесь было лого, но его украли!">

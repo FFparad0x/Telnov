@@ -6,7 +6,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.GregorianCalendar" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -16,7 +16,7 @@
     </title>
 </head>
 <body>
-<jsp:include page="include/shapka.jsp"></jsp:include>
+<%@ include file = "include/shapka.jsp" %>
 <%
     Theatre theatre;
     Performance performance;
@@ -73,21 +73,59 @@
                 <h2>Партер</h2>
                 <p>Кол-во свободных мест: <%=performance.getFree_parter()%>
                 <p>Цена: <%=performance.getPrice_parter()%>
-                </> <p><input type="submit" form="parter" class="jbtn" value="Купить"></p>
+                </>
+                <p><%
+                    if(performance.getFree_parter() > 0){
+                %>
+                    <input type="submit" form="parter" class="jbtn" value="Купить"></p>
+                <%
+                }
+                else
+                {
+                %>
+                <h3>Билеты распроданы</h3></>
+            <%
+                }
+            %>
             </div>
             <div class="blockPrice">
                 <h2>Бельэтаж</h2>
                 <p>Кол-во свободных мест: <%=performance.getFree_beletage()%>
                 </>
                 <p>Цена: <%=performance.getPrice_beletage()%>
-                </> <p> <input type="submit" form="beletage" class="jbtn" value="Купить"></p>
+                </>
+                <p><%
+                    if(performance.getFree_beletage() > 0){
+                %>
+                    <input type="submit" form="beletage" class="jbtn" value="Купить"></p>
+                <%
+                }
+                else
+                {
+                %>
+                <h3>Билеты распроданы</h3></>
+            <%
+                }
+            %>
             </div>
             <div class="blockPrice">
                 <h2>Балкон</h2>
                 <p>Кол-во свободных мест: <%=performance.getFree_balcony()%>
                 <p>Цена: <%=performance.getPrice_balcony() %>
                 </>
-                <p><input type="submit" form="balcony" class="jbtn" value="Купить"></p>
+                <p><%
+                    if(performance.getFree_balcony() > 0){
+                %>
+                    <input type="submit" form="balcony" class="jbtn" value="Купить"></p>
+                <%
+                    }
+                    else
+                    {
+                        %>
+                <h3>Билеты распроданы</h3></>
+                <%
+                    }
+                %>
             </div>
         </div>
         <div class="controls">

@@ -19,7 +19,11 @@ public class Order {
         return placeType;
     }
 
-    public Order(Performance performance, String placeType){
+    public void setPlaceType(String placeType) {
+        this.placeType = placeType;
+    }
+
+    public Order(Performance performance){
         dateOfOrder = new Date();
         this.performance = performance;
         this.placeType = placeType;

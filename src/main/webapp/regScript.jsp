@@ -1,7 +1,7 @@
 <%@ page import="com.example.demo5.Account" %>
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page import="com.example.demo5.HelloServlet" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 <%
     if (request.getParameter("llogin") != null && request.getParameter("lpass")!=null) {

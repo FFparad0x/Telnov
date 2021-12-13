@@ -6,14 +6,14 @@
 <%@ page import="java.util.GregorianCalendar" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page session="false" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <link rel="stylesheet" href="res/styles.css">
     <title>Редактирование театра</title>
 </head>
 <body>
-<jsp:include page="include/shapka.jsp"></jsp:include>
+<%@ include file = "include/shapka.jsp" %>
 <%
     Integer id = Integer.parseInt(request.getParameter("id"));
     Integer theatreId = Integer.parseInt(request.getParameter("theatre"));

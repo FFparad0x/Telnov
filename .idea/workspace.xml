@@ -9,19 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!">
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performances.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/res/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/res/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,7 @@
         <option value="jsf" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -244,7 +246,9 @@
       <workItem from="1639243173127" duration="3278000" />
       <workItem from="1639305537679" duration="14944000" />
       <workItem from="1639333322406" duration="1581000" />
-      <workItem from="1639339313210" duration="10511000" />
+      <workItem from="1639339313210" duration="10829000" />
+      <workItem from="1639391661151" duration="4336000" />
+      <workItem from="1639398379447" duration="3573000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -344,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639342376309</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой">
+      <created>1639351192824</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1639351192824</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,15 +424,26 @@
     <MESSAGE value="id в аккаунте" />
     <MESSAGE value="Добавил страницу заказов. Пора делать действия с логином" />
     <MESSAGE value="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал выход. ***КУКИ ТЕПЕРЬ УДАЛЯЮТСЯ !!!!!!!!" />
+    <MESSAGE value="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой" />
+    <option name="LAST_COMMIT_MESSAGE" value="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>53</line>
+          <line>65</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
+          <line>62</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
+          <line>59</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

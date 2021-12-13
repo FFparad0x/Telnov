@@ -5,23 +5,21 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List" %>
-<%@ page import="jakarta.servlet.http.Cookie" %><%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 05.12.2021
-  Time: 19:39
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="jakarta.servlet.http.Cookie" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
+
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="res/styles.css">
     <title>Предстваления</title>
 </head>
 <body>
-<jsp:include page="include/shapka.jsp"></jsp:include>
+
+<%@ include file = "include/shapka.jsp" %>
 <%
+//    request.setCharacterEncoding("UTF-8");
     boolean admin = false;
     Cookie[] cookies = request.getCookies();
     if (cookies != null) {
@@ -109,6 +107,7 @@
     }
 %>
 <%-- Тут вывод в таблицу--%>
+
 <%
     if (admin) {%>
 <form action="Performance.jsp" method="post">

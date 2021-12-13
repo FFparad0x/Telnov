@@ -6,7 +6,7 @@
   Time: 21:32
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -14,7 +14,7 @@
     <title>Редактирование театра</title>
 </head>
 <body>
-<jsp:include page="include/shapka.jsp"></jsp:include>
+<%@ include file = "include/shapka.jsp" %>
 <%
     Integer id = Integer.parseInt(request.getParameter("id"));
     if (id != null) {

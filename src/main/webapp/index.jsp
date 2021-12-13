@@ -7,8 +7,9 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.ParseException" %>
 <%@ page import="jakarta.servlet.http.Cookie" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
+<anyxmlelement xmlns:c="http://java.sun.com/jsp/jstl/core" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -224,8 +225,10 @@
 </head>
 <body>
 
-<jsp:include page="include/shapka.jsp"></jsp:include>
+<%@ include file = "include/shapka.jsp" %>
+<%
 
+%>
 <div class="selector">
     <form action="index.jsp" method="get" class="mainsel">
         <input type="hidden" name="search" value="1">
@@ -292,21 +295,26 @@
         </div>
         <div class="Content">
             <div class="header">
-                Представления id - id
+                Представления
             </div>
             <div class="Content-Body">
                 <% prod.clear();
                     for (Theatre theatre : DataBase.theatres) {
-                        prod.addAll(theatre.getPerformances().stream().map(performance -> String.valueOf(performance.getId())).collect(Collectors.toList()));
-                    }
-                    for (String pr : prod) {%>
+                        for (Performance pr : theatre.getPerformances()) {
+                %>
                 <div class="line">
-                    <input type="checkbox" name="performances" value="<%=pr%>" id="<%=pr%> "
-                           <% if(request.getParameter("performances") != null) if(Arrays.stream(request.getParameterMap().get("performances")).filter(i->i.equals(pr)).findFirst().equals(Optional.of(pr)))%>checked>
-                    <label for="<%=pr%>"><%=pr%>
+                    <input type="checkbox" name="performances" value="<%=pr.getId()%>" id="<%=pr.getId()%> "
+                           <% if(request.getParameter("performances") != null) if(Arrays.stream(request.getParameterMap().get("performances"))
+                           .filter(
+                                   i->i.equals(String.valueOf(pr.getId())))
+                                   .findFirst()
+                                   .equals(Optional.of(String.valueOf(pr.getId()))))%>checked>
+                    <label for="<%=pr%>"><%=pr.getName()%>
                     </label>
                 </div>
                 <%
+                        }
+
                     }
                 %>
             </div>
@@ -317,40 +325,202 @@
             </div>
             <div class="Content-Body">
                 <%
-                    Long min = null;
-                    Long max = null;
-                    Date sDate, eDate;
-                    String data1, data2;
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                    if (request.getParameter("dStart") == null) {
-                        for (Theatre theatre : DataBase.theatres) {
-                            for (Performance performance : theatre.getPerformances()) {
-                                Long t = performance.getDate().getTime();
-                                if (min == null) {
-                                    min = performance.getDate().getTime();
-                                    max = performance.getDate().getTime();
+                    Long
+                            min
+                            =
+                            null;
+                    Long
+                            max
+                            =
+                            null;
+                    Date
+                            sDate,
+                            eDate;
+                    String
+                            data1,
+                            data2;
+                    SimpleDateFormat
+                            formatter
+                            =
+                            new
+                                    SimpleDateFormat
+                                    (
+                                            "yyyy-MM-dd"
+                                    );
+                    if
+                    (
+                            request
+                                    .
+                                    getParameter
+                                            (
+                                                    "dStart"
+                                            )
+                                    ==
+                                    null
+                    ) {
+                        for
+                        (
+                                Theatre
+                                        theatre
+                                :
+                                DataBase
+                                        .
+                                        theatres
+                        ) {
+                            for
+                            (
+                                    Performance
+                                            performance
+                                    :
+                                    theatre
+                                            .
+                                            getPerformances
+                                                    (
+                                                    )
+                            ) {
+                                Long
+                                        t
+                                        =
+                                        performance
+                                                .
+                                                getDate
+                                                        (
+                                                        )
+                                                        .
+                                                getTime
+                                                        (
+                                                        );
+                                if
+                                (
+                                        min
+                                                ==
+                                                null
+                                ) {
+                                    min
+                                            =
+                                            performance
+                                                    .
+                                                    getDate
+                                                            (
+                                                            )
+                                                            .
+                                                    getTime
+                                                            (
+                                                            )
+                                    ;
+                                    max
+                                            =
+                                            performance
+                                                    .
+                                                    getDate
+                                                            (
+                                                            )
+                                                            .
+                                                    getTime
+                                                            (
+                                                            )
+                                    ;
                                 } else {
-                                    if (t > max) {
-                                        max = t;
+                                    if
+                                    (
+                                            t
+                                                    >
+                                                    max
+                                    ) {
+                                        max
+                                                =
+                                                t
+                                        ;
                                     }
-                                    if (t < min) {
-                                        min = t;
+                                    if
+                                    (
+                                            t
+                                                    <
+                                                    min
+                                    ) {
+                                        min
+                                                =
+                                                t
+                                        ;
                                     }
                                 }
                             }
                         }
-                        if (min == null) {
-                            sDate = new Date();
-                            eDate = new Date();
+                        if
+                        (
+                                min
+                                        ==
+                                        null
+                        ) {
+                            sDate
+                                    =
+                                    new
+                                            Date
+                                            (
+                                            )
+                            ;
+                            eDate
+                                    =
+                                    new
+                                            Date
+                                            (
+                                            )
+                            ;
                         } else {
-                            sDate = new Date(min);
-                            eDate = new Date(max);
+                            sDate
+                                    =
+                                    new
+                                            Date
+                                            (
+                                                    min
+                                            )
+                            ;
+                            eDate
+                                    =
+                                    new
+                                            Date
+                                            (
+                                                    max
+                                            )
+                            ;
                         }
-                        data1 = formatter.format(sDate);
-                        data2 = formatter.format(eDate);
+                        data1
+                                =
+                                formatter
+                                        .
+                                        format
+                                                (
+                                                        sDate
+                                                )
+                        ;
+                        data2
+                                =
+                                formatter
+                                        .
+                                        format
+                                                (
+                                                        eDate
+                                                )
+                        ;
                     } else {
-                        data1 = request.getParameter("dStart");
-                        data2 = request.getParameter("dEnd");
+                        data1
+                                =
+                                request
+                                        .
+                                        getParameter
+                                                (
+                                                        "dStart"
+                                                )
+                        ;
+                        data2
+                                =
+                                request
+                                        .
+                                        getParameter
+                                                (
+                                                        "dEnd"
+                                                )
+                        ;
                     }
                 %>
                 <div class="line">
@@ -364,16 +534,36 @@
 </div>
 <%-- Тут вывод в таблицу--%>
 <%
-    if(admin){
+    if
+    (
+            admin
+    ) {
 %>
 <form action="Theatre.jsp" method="post">
     <button type="submit" name="id" value="-1" class="jbtn">Добавить театр</button>
 </form>
 <%
     }
-    if (DataBase.theatres != null) {
-        if (theatresToShow == null) {
-            theatresToShow = DataBase.theatres;
+    if
+    (
+            DataBase
+                    .
+                    theatres
+                    !=
+                    null
+    ) {
+        if
+        (
+                theatresToShow
+                        ==
+                        null
+        ) {
+            theatresToShow
+                    =
+                    DataBase
+                            .
+                            theatres
+            ;
         }%>
 <table class="iksweb">
     <tr>
@@ -381,7 +571,10 @@
         <th>Адрес</th>
         <th>Количество мест</th>
         <%
-            if (admin) {
+            if
+            (
+                    admin
+            ) {
         %>
         <th>Ред.</th>
         <%
@@ -389,22 +582,52 @@
     </tr>
 
     <%
-        if (theatresToShow.size() != 0)
-            for (Theatre theatre : theatresToShow) {
+        if
+        (
+                theatresToShow
+                        .
+                        size
+                                (
+                                )
+                        !=
+                        0
+        )
+            for
+            (
+                    Theatre
+                            theatre
+                    :
+                    theatresToShow
+            ) {
     %>
     <tr>
         <td onclick="window.location = 'performances.jsp?id=<%=theatre.getId()%>'">
-            <%=theatre.getName()%>
+            <%=theatre
+                    .
+                    getName
+                            (
+                            )%>
         </td>
         <td onclick="window.location = 'performances.jsp?id=<%=theatre.getId()%>'">
-            <%=theatre.getAddress()%>
+            <%=theatre
+                    .
+                    getAddress
+                            (
+                            )%>
         </td>
         <td onclick="window.location = 'performances.jsp?id=<%=theatre.getId()%>'">
-            <%=theatre.getNum_sum()%>
+            <%=theatre
+                    .
+                    getNum_sum
+                            (
+                            )%>
         </td>
         <%
 
-            if (admin) {
+            if
+            (
+                    admin
+            ) {
         %>
         <td class="Superb" onclick="window.location = 'Theatre.jsp?id=<%=theatre.getId()%>'">&#9998;</td>
 
