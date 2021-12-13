@@ -208,10 +208,8 @@
         } catch (Exception e) {
             response.getWriter().println("Все блять поиск не работает");
             for (StackTraceElement stackTraceElement : e.getStackTrace()) {
-                response.getWriter().println(stackTraceElement.toString() + "\n");
             }
         }
-        response.getWriter().println(theatresToShow.size());
     %>
 
 
