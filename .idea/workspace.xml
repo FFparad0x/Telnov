@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="finita la comedia">
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="final штрихи">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +76,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -240,7 +237,8 @@
       <workItem from="1639339313210" duration="10829000" />
       <workItem from="1639391661151" duration="4336000" />
       <workItem from="1639398379447" duration="7813000" />
-      <workItem from="1639413063350" duration="1096000" />
+      <workItem from="1639413063350" duration="1507000" />
+      <workItem from="1639415363255" duration="2068000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -361,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639412620509</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="final штрихи">
+      <created>1639414198398</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1639414198398</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +438,8 @@
     <MESSAGE value="Все работает. Осталось сделать нормальный стиль, поправить логику , деплой" />
     <MESSAGE value="Поебался с кодировкой, сделал так, чтобы логин перебрасывал на ту же страницу где и был совершен выход" />
     <MESSAGE value="finita la comedia" />
-    <option name="LAST_COMMIT_MESSAGE" value="finita la comedia" />
+    <MESSAGE value="final штрихи" />
+    <option name="LAST_COMMIT_MESSAGE" value="final штрихи" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
