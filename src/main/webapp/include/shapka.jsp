@@ -1,4 +1,4 @@
-<%@ page import="jakarta.servlet.http.Cookie" %>
+<%@ page import="javax.servlet.http.Cookie" %>
 <%@ page import="com.example.demo5.Account" %>
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
