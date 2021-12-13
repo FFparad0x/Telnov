@@ -20,8 +20,13 @@ public class DataBase {
         }
 
     }
+    public static void InitTheatre() {
+        theatres = new ArrayList<>();
+    }
 
-    public static Theatre getTheatre(int id) {
+
+
+        public static Theatre getTheatre(int id) {
         for (Theatre theatre : theatres) {
             if (theatre.id == id) {
                 return theatre;

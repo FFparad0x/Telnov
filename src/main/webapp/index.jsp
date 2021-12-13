@@ -17,8 +17,7 @@
     <meta charset="UTF-8">
     <%
         if (DataBase.theatres == null) {
-            DataBase.InitTheatre(1);
-            response.getWriter().println("Создан театр");
+            DataBase.InitTheatre(23);
         }
         if (DataBase.accounts == null) {
             DataBase.InitAccounts();
@@ -33,7 +32,6 @@
                 }
             }
         }
-        response.getWriter().println(DataBase.theatres.size());
         if (request.getParameter("add") != null) {
             Theatre theatre = new Theatre();
             theatre.setName(request.getParameter("name"));
@@ -84,7 +82,6 @@
                     }
                 }
                 searchResult = new ArrayList<>(temp);
-                response.getWriter().println(searchResult.size());
             }
             if (request.getParameter("producers") != null) {
                 if (searchResult == null) {

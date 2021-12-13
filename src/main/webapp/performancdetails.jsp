@@ -16,7 +16,7 @@
     </title>
 </head>
 <body>
-<%@ include file = "include/shapka.jsp" %>
+<%@ include file="include/shapka.jsp" %>
 <%
     Theatre theatre;
     Performance performance;
@@ -39,8 +39,8 @@
         calendar.setTime(time);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
         String timeS = format.format(time);
-        if(calendar.get(Calendar.HOUR_OF_DAY) < 10)
-           timeS = timeS.split("T")[0] + "T0" + timeS.split("T")[1];
+        if (calendar.get(Calendar.HOUR_OF_DAY) < 10)
+            timeS = timeS.split("T")[0] + "T0" + timeS.split("T")[1];
 
         response.getWriter().println(format.format(time));
 %>
@@ -51,7 +51,7 @@
         <p>Название: <%=performance.getName()%>
         </p>
         <p>Начало: <input type="datetime-local" name="date" value="<%=timeS%>"
-                        readonly></p>
+                          readonly></p>
         <p>Продолжительность:<%=performance.getLength()%> минут</p>
         <div class="Info">
             <div class="block">
@@ -85,86 +85,83 @@
                 <p>Цена: <%=performance.getPrice_parter()%>
                 </>
                 <p><%
-                    if(logged){
-                    if(performance.getFree_parter() > 0){
+                    if (logged) {
+                        if (performance.getFree_parter() > 0) {
                 %>
                     <input type="submit" form="parter" class="jbtn" value="Купить"></p>
                 <%
-                }
-                else
-                {
+                } else {
                 %>
-                <h3>Билеты распроданы</h3></>
+                <h3>Билеты распроданы</h3></
+            >
             <%
                 }
-                }
-                    else{
+            } else {
             %>
-            <h3 >Зарегистрируйтесь чтобы купить</h3></>
+            <h3>Зарегистрируйтесь чтобы купить</h3></
+        >
             <%
                 }
             %>
-            </div>
-            <div class="blockPrice">
-                <h2>Бельэтаж</h2>
-                <p>Кол-во свободных мест: <%=performance.getFree_beletage()%>
-                </>
-                <p>Цена: <%=performance.getPrice_beletage()%>
-                </>
-                <p><%
-                    if(logged){
-                    if(performance.getFree_beletage() > 0){
-                %>
-                    <input type="submit" form="beletage" class="jbtn" value="Купить"></p>
-                <%
-                }
-                else
-                {
-                %>
-                <h3>Билеты распроданы</h3></>
-            <%
-                }
-                }
-                else{
-            %>
-<h3 >Зарегистрируйтесь чтобы купить</h3></>
-<%
-    }
-%>
-            </div>
-            <div class="blockPrice">
-                <h2>Балкон</h2>
-                <p>Кол-во свободных мест: <%=performance.getFree_balcony()%>
-                <p>Цена: <%=performance.getPrice_balcony() %>
-                </>
-                <p><%
-                    if(logged){
-                    if(performance.getFree_balcony() > 0){
-                %>
-                    <input type="submit" form="balcony" class="jbtn" value="Купить"></p>
-                <%
-                    }
-                    else
-                    {
-                        %>
-                <h3>Билеты распроданы</h3></>
-                <%
-                    }
-                    }
-                    else{
-                %>
-<h3 >Зарегистрируйтесь чтобы купить</h3></>
-<%
-    }
-%>
-            </div>
-        </div>
-        <div class="controls">
-            <a href="performances.jsp?id=<%=theatre.getId()%>" class="jbtn">Назад</a>
-        </div>
-    </form>
 </div>
-<form id="parter" method="get" action="orders.jsp" >
+<div class="blockPrice">
+    <h2>Бельэтаж</h2>
+    <p>Кол-во свободных мест: <%=performance.getFree_beletage()%>
+    </>
+    <p>Цена: <%=performance.getPrice_beletage()%>
+    </>
+    <p><%
+        if (logged) {
+            if (performance.getFree_beletage() > 0) {
+    %>
+        <input type="submit" form="beletage" class="jbtn" value="Купить"></p>
+    <%
+    } else {
+    %>
+    <h3>Билеты распроданы</h3></
+>
+<%
+    }
+} else {
+%>
+<h3>Зарегистрируйтесь чтобы купить</h3></
+>
+<%
+    }
+%>
+</div>
+<div class="blockPrice">
+    <h2>Балкон</h2>
+    <p>Кол-во свободных мест: <%=performance.getFree_balcony()%>
+    <p>Цена: <%=performance.getPrice_balcony() %>
+    </>
+    <p><%
+        if (logged) {
+            if (performance.getFree_balcony() > 0) {
+    %>
+        <input type="submit" form="balcony" class="jbtn" value="Купить"></p>
+    <%
+    } else {
+    %>
+    <h3>Билеты распроданы</h3></
+>
+<%
+    }
+} else {
+%>
+<h3>Зарегистрируйтесь чтобы купить</h3></
+>
+<%
+    }
+%>
+</div>
+</div>
+<div class="controls">
+    <a href="performances.jsp?id=<%=theatre.getId()%>" class="jbtn">Назад</a>
+</div>
+</form>
+</div>
+<form id="parter" method="get" action="orders.jsp">
     <input type="hidden" name="buy" value="parter">
     <input type="hidden" name="theatre" value="<%=theatre.getId()%>">
     <input type="hidden" name="perf" value="<%=performance.getId()%>">
