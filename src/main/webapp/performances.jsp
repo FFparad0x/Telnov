@@ -68,31 +68,31 @@
     }
 
     if (request.getParameter("add") != null) {
-        Performance temp = new Performance();
+        Performance temp = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("saveid")));
         Map<String, String[]> param = request.getParameterMap();
         temp.setName(request.getParameter("name"));
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
         temp.setDate(format.parse(request.getParameter("date")));
         temp.getProducer().clear();
         if(param.get("producers") != null)
-        for (String producer : param.get("producers")) {
-            temp.getProducer().add(producer);
-        }
+            for (String producer : param.get("producers")) {
+                temp.getProducer().add(producer);
+            }
         else
             temp.getProducer().add("");
         temp.getActors().clear();
         if(param.get("actors") != null)
-        for (String producer : param.get("actors")) {
-            temp.getActors().add(producer);
-        }
+            for (String producer : param.get("actors")) {
+                temp.getActors().add(producer);
+            }
         else
             temp.getActors().add("");
-
         temp.setFree_parter( Integer.parseInt(request.getParameter("freeparter")) < theatre.getNum_parter() ?  Integer.parseInt(request.getParameter("freeparter")):  theatre.getNum_parter());
         temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")) < theatre.getNum_balcon() ?  Integer.parseInt(request.getParameter("freebalcony")):  theatre.getNum_balcon());
         temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")) < theatre.getNum_beletage() ?  Integer.parseInt(request.getParameter("freebeletage")):  theatre.getNum_beletage());
         temp.setPrice_balcony(Integer.parseInt(request.getParameter("balcony")));
         temp.setPrice_beletage(Integer.parseInt(request.getParameter("beletage")));
+        temp.setLength(Integer.parseInt(request.getParameter("len")));
         temp.setPrice_parter(Integer.parseInt(request.getParameter("parter")));
         temp.setTheatre(theatre);
         theatre.getPerformances().add(temp);

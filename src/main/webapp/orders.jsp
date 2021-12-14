@@ -1,5 +1,5 @@
+<%--<%@ page import="javax.servlet.http.Cookie" %>--%>
 <%@ page import="javax.servlet.http.Cookie" %>
-<%--<%@ page import="jakarta.servlet.http.Cookie" %>--%>
 <%@ page import="com.example.demo5.*" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %><%--

@@ -3,7 +3,7 @@
 <%@ page import="com.example.demo5.DataBase" %>
 <%@page import="com.example.demo5.Account" %>
 <%@ page import="java.util.concurrent.TimeUnit" %>
-<%@ page import="jakarta.servlet.http.Cookie" %>
+<%@ page import="javax.servlet.http.Cookie" %>
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

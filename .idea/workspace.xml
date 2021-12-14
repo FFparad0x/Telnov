@@ -9,10 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="javax !">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBaseAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBaseTicket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Ticket.java" beforeDir="false" />
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="udp">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performances.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tickets.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +244,7 @@
       <workItem from="1639415363255" duration="4418000" />
       <workItem from="1639429930886" duration="1682000" />
       <workItem from="1639435999975" duration="611000" />
-      <workItem from="1639472892316" duration="974000" />
+      <workItem from="1639472892316" duration="1746000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -406,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639473749562</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="udp">
+      <created>1639473885473</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1639473885473</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +490,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="change to javax" />
     <MESSAGE value="javax !" />
-    <option name="LAST_COMMIT_MESSAGE" value="javax !" />
+    <MESSAGE value="udp" />
+    <option name="LAST_COMMIT_MESSAGE" value="udp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
