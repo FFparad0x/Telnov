@@ -3,6 +3,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.example.demo5.Performance" %>
 <%@ page import="java.util.*" %>
+<%--<%@ page import="javax.servlet.http.Cookie" %>--%>
 <%@ page import="jakarta.servlet.http.Cookie" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
@@ -14,7 +15,7 @@
     <meta charset="UTF-8">
     <%
         if (DataBase.theatres == null) {
-            DataBase.InitTheatre(23);
+            DataBase.InitTheatre();
         }
         if (DataBase.accounts == null) {
             DataBase.InitAccounts();
@@ -208,10 +209,8 @@
         } catch (Exception e) {
             response.getWriter().println("Все блять поиск не работает");
             for (StackTraceElement stackTraceElement : e.getStackTrace()) {
-                response.getWriter().println(stackTraceElement.toString() + "\n");
             }
         }
-        response.getWriter().println(theatresToShow.size());
     %>
 
 
@@ -523,7 +522,7 @@
                 </div>
             </div>
         </div>
-        <input type="submit" value="Поиск">
+        <input type="submit" value="Поиск" class="search">
     </form>
 </div>
 <%-- Тут вывод в таблицу--%>

@@ -78,13 +78,13 @@
             <textarea cols="50" rows="10" placeholder="Актеры. Вводить по 1 на строку" name="actorsset"></textarea>
         </label>
         <label>
-            <input type="text" placeholder="Кол-во мест на балконе" name="balcony">
+            <input type="text" placeholder="Кол-во мест на балконе" name="balcony" pattern="\d*">
         </label>
         <label>
-            <input type="text" placeholder="Кол-во мест в партере" name="parter">
+            <input type="text" placeholder="Кол-во мест в партере" name="parter" pattern="\d*">
         </label>
         <label>
-            <input type="text" placeholder="Кол-во мест в бельэтаже" name="beletage">
+            <input type="text" placeholder="Кол-во мест в бельэтаже" name="beletage" pattern="\d*">
         </label>
         <div class="controls">
             <a href="index.jsp" class="jbtn">Назад</a>

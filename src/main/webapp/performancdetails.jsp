@@ -21,7 +21,7 @@
     Theatre theatre;
     Performance performance;
     boolean logged = false;
-    Cookie[] cookies = request.getCookies();
+    Cookie[] cookies = request.getCookies(); //проверка на логин
     if (cookies != null) {
         for (Cookie cookie : request.getCookies()) {
             if (cookie.getName().equals("status")) {
@@ -42,7 +42,6 @@
         if (calendar.get(Calendar.HOUR_OF_DAY) < 10)
             timeS = timeS.split("T")[0] + "T0" + timeS.split("T")[1];
 
-        response.getWriter().println(format.format(time));
 %>
 <div class="edit">
     <form method="get" action="performances.jsp">

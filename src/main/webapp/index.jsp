@@ -4,9 +4,10 @@
 <%@ page import="com.example.demo5.Performance" %>
 <%@ page import="java.util.*" %>
 <%@ page import="javax.servlet.http.Cookie" %>
+<%--<%@ page import="jakarta.servlet.http.Cookie" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
-<anyxmlelement xmlns:c="http://java.sun.com/jsp/jstl/core" />
+<anyxmlelement xmlns:c="http://java.sun.com/jsp/jstl/core"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +15,12 @@
     <meta charset="UTF-8">
     <%
         if (DataBase.theatres == null) {
-            DataBase.InitTheatre(23);
+            DataBase.InitTheatre();
         }
         if (DataBase.accounts == null) {
             DataBase.InitAccounts();
         }
-        boolean admin = false;
+        boolean admin = false; // Проверка на логин, если есть куки - значит, что пользователь зашел
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : request.getCookies()) {
@@ -29,7 +30,7 @@
                 }
             }
         }
-        if (request.getParameter("add") != null) {
+        if (request.getParameter("add") != null) { // добавление театра
             Theatre theatre = new Theatre();
             theatre.setName(request.getParameter("name"));
             theatre.setAddress(request.getParameter("address"));
@@ -44,7 +45,7 @@
             }
             DataBase.theatres.add(theatre);
         }
-        if (request.getParameter("save") != null) {
+        if (request.getParameter("save") != null) { // сохранение изменений в театре
             int id = Integer.parseInt(request.getParameter("saveid"));
             Theatre theatre = DataBase.getTheatre(id);
             theatre.setName(request.getParameter("name"));
@@ -61,12 +62,12 @@
                 theatre.getActors().add(producers);
             }
         }
-        if (request.getParameter("delid") != null) {
+        if (request.getParameter("delid") != null) { // уаление театра
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
         }
 
         ArrayList<Theatre> theatresToShow = null;
-        try {
+        try { // проходимся по театрам, если поиск не производитсяЮ то отображаем все что есть
             ArrayList<Theatre> searchResult = null;
             if (request.getParameter("theatres") != null) {
                 String[] parameters = request.getParameterMap().get("theatres");
@@ -80,7 +81,7 @@
                 }
                 searchResult = new ArrayList<>(temp);
             }
-            if (request.getParameter("producers") != null) {
+            if (request.getParameter("producers") != null) { // поиск по режиссерам
                 if (searchResult == null) {
                     searchResult = new ArrayList<>();
                 }
@@ -106,7 +107,7 @@
                     searchResult.addAll(temp);
                 }
             }
-            if (request.getParameter("actors") != null) {
+            if (request.getParameter("actors") != null) { //поиск по актерам
                 if (searchResult == null) {
                     searchResult = new ArrayList<>();
                 }
@@ -136,7 +137,7 @@
                     searchResult.addAll(temp);
                 }
             }
-            if (request.getParameter("performances") != null) {
+            if (request.getParameter("performances") != null) { // поиск по представлениям
                 if (searchResult == null) {
                     searchResult = new ArrayList<>();
                 }
@@ -166,7 +167,7 @@
                     searchResult.addAll(temp);
                 }
             }
-            if (request.getParameter("dStart") != null) {
+            if (request.getParameter("dStart") != null) { //поиск по дате
                 if (!request.getParameter("dStart").equals("") && !request.getParameter("dEnd").equals("")) {
                     if (searchResult == null) {
                         searchResult = new ArrayList<>();
@@ -200,13 +201,13 @@
                     }
                 }
             }
-            if (request.getParameter("search") != null) {
+            if (request.getParameter("search") != null) { //если был поиск, что отбражаем результат
                 theatresToShow = searchResult;
             } else {
                 theatresToShow = DataBase.theatres;
             }
         } catch (Exception e) {
-            response.getWriter().println("Все блять поиск не работает");
+            response.getWriter().println("поиск не работает");
             for (StackTraceElement stackTraceElement : e.getStackTrace()) {
             }
         }
@@ -217,7 +218,7 @@
 </head>
 <body>
 
-<%@ include file = "include/shapka.jsp" %>
+<%@ include file="include/shapka.jsp" %>
 <%
 
 %>
@@ -233,6 +234,7 @@
                     for (Theatre theatre : DataBase.theatres) {
                 %>
                 <div class="line">
+                    <%--                    //вывод элементов по которым может идти поиск--%>
                     <input type="checkbox" name="theatres" value="<%=theatre.getId()%>" id="<%=theatre.getId()%> "
                            <% if(request.getParameter("theatres") !=null)if(Arrays.stream(request.getParameterMap().get("theatres")).filter(i->i.equals(String.valueOf(theatre.getId()))).findFirst().equals(Optional.of(String.valueOf(theatre.getId()))))%>checked>
                     <label for="<%=theatre.getId()%>"><%=theatre.getName()%>
@@ -316,7 +318,8 @@
                 Даты
             </div>
             <div class="Content-Body">
-                <%
+                <% //почему то idea после форматирования решила разбить все на строки. Идет выставление даты
+                    //Если нет представлений, то ставится сегодняшняя дата, если есть, то минимальная и масимальная
                     Long
                             min
                             =
@@ -495,24 +498,8 @@
                                                 )
                         ;
                     } else {
-                        data1
-                                =
-                                request
-                                        .
-                                        getParameter
-                                                (
-                                                        "dStart"
-                                                )
-                        ;
-                        data2
-                                =
-                                request
-                                        .
-                                        getParameter
-                                                (
-                                                        "dEnd"
-                                                )
-                        ;
+                        data1=request.getParameter("dStart" );
+                        data2=request.getParameter("dEnd");
                     }
                 %>
                 <div class="line">
@@ -521,7 +508,7 @@
                 </div>
             </div>
         </div>
-        <input type="submit" value="Поиск">
+        <input type="submit" value="Поиск" class="search">
     </form>
 </div>
 <%-- Тут вывод в таблицу--%>

@@ -15,7 +15,8 @@
 <body>
 <%@ include file = "include/shapka.jsp" %>
 <%
-    Integer id = Integer.parseInt(request.getParameter("id"));
+
+    Integer id = Integer.parseInt(request.getParameter("id")); // идет получения представени я и вывод информации о нем
     Integer theatreId = Integer.parseInt(request.getParameter("theatre"));
     Theatre theatre = DataBase.getTheatre(theatreId);
     String timeS = "";

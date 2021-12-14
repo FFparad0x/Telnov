@@ -8,7 +8,6 @@ public class DataBase {
     public static ArrayList<Theatre> theatres;
     public static ArrayList<Performance> performances;
     public static ArrayList<Account> accounts;
-    public static ArrayList<Ticket> tickets;
 
 
     public static void InitTheatre(int num) {
@@ -36,10 +35,8 @@ public class DataBase {
     }
     public static void InitAccounts(){
         accounts = new ArrayList<>();
-        Account AdminAcc = new Account("Admin", "asdf", true);
+        Account AdminAcc = new Account("Admin", "admin", true);
         accounts.add(AdminAcc);
-        Account userTest = new Account("1", "1", true);
-        accounts.add(userTest);
     }
     public static Account getAccount(int id){
         for (Account account : accounts) {

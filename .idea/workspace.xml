@@ -9,7 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="change to javax" />
+    <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="javax !">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performances.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/res/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/res/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/Theatre.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/Theatre.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/include/shapka.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performancdetails.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performances.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/res/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/res/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,7 +254,10 @@
       <workItem from="1639391661151" duration="4336000" />
       <workItem from="1639398379447" duration="7813000" />
       <workItem from="1639413063350" duration="1507000" />
-      <workItem from="1639415363255" duration="2936000" />
+      <workItem from="1639415363255" duration="4418000" />
+      <workItem from="1639429930886" duration="1682000" />
+      <workItem from="1639435999975" duration="611000" />
+      <workItem from="1639472892316" duration="640000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -378,7 +399,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639421498084</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="change to javax">
+      <created>1639421610291</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1639421610291</updated>
+    </task>
+    <task id="LOCAL-00022" summary="javax !">
+      <created>1639421758422</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1639421758422</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,28 +488,8 @@
     <MESSAGE value="final штрихи" />
     <MESSAGE value="update" />
     <MESSAGE value="change to javax" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to javax" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>72</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>69</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/orders.jsp</url>
-          <line>66</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="javax !" />
+    <option name="LAST_COMMIT_MESSAGE" value="javax !" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

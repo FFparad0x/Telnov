@@ -6,6 +6,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List" %>
 <%@ page import="javax.servlet.http.Cookie" %>
+<%--<%@ page import="jakarta.servlet.http.Cookie" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 
@@ -21,7 +22,7 @@
 <%
 //    request.setCharacterEncoding("UTF-8");
     boolean admin = false;
-    Cookie[] cookies = request.getCookies();
+    Cookie[] cookies = request.getCookies(); //проверка на логин
     if (cookies != null) {
         for (Cookie cookie : request.getCookies()) {
             if (cookie.getName().equals("status") && cookie.getValue().equals("admin")) {

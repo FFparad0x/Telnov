@@ -106,7 +106,24 @@
     text-decoration: none;
     color: #ffffff;
 }
-
+.search{
+    margin: inherit;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px;
+    font-family: Times-New-Roman;
+    background-color: #3f63c1e8;
+    border-radius: 28px;
+    border: 1px solid #3f63c1e8;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    max-height: 43px;
+    min-height: 35px;
+}
 .jbtn:hover {
     margin: inherit;
     margin-right: 5px;
