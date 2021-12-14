@@ -68,7 +68,7 @@
     }
 
     if (request.getParameter("add") != null) {
-        Performance temp = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("saveid")));
+        Performance temp = new Performance(theatre);
         Map<String, String[]> param = request.getParameterMap();
         temp.setName(request.getParameter("name"));
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
