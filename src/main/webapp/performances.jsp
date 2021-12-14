@@ -6,7 +6,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List" %>
 <%@ page import="javax.servlet.http.Cookie" %>
-<%--<%@ page import="jakarta.servlet.http.Cookie" %>--%>
+<%--<%@ page import="javax.servlet.http.Cookie" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 
@@ -149,7 +149,7 @@
         <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">
             <%=performance.getDate().toString()%>
         </td>
-        <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">
+        <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'" style="text-align: right">
             <%=performance.PrintProducers()%>
         </td>
         <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">

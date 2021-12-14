@@ -5,8 +5,8 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List" %>
-<%--<%@ page import="javax.servlet.http.Cookie" %>--%>
 <%@ page import="jakarta.servlet.http.Cookie" %>
+<%--<%@ page import="jakarta.servlet.http.Cookie" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 
@@ -22,7 +22,7 @@
 <%
 //    request.setCharacterEncoding("UTF-8");
     boolean admin = false;
-    Cookie[] cookies = request.getCookies();
+    Cookie[] cookies = request.getCookies(); //проверка на логин
     if (cookies != null) {
         for (Cookie cookie : request.getCookies()) {
             if (cookie.getName().equals("status") && cookie.getValue().equals("admin")) {
@@ -68,31 +68,31 @@
     }
 
     if (request.getParameter("add") != null) {
-        Performance temp = new Performance();
+        Performance temp = new Performance(theatre);
         Map<String, String[]> param = request.getParameterMap();
         temp.setName(request.getParameter("name"));
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
         temp.setDate(format.parse(request.getParameter("date")));
         temp.getProducer().clear();
         if(param.get("producers") != null)
-        for (String producer : param.get("producers")) {
-            temp.getProducer().add(producer);
-        }
+            for (String producer : param.get("producers")) {
+                temp.getProducer().add(producer);
+            }
         else
             temp.getProducer().add("");
         temp.getActors().clear();
         if(param.get("actors") != null)
-        for (String producer : param.get("actors")) {
-            temp.getActors().add(producer);
-        }
+            for (String producer : param.get("actors")) {
+                temp.getActors().add(producer);
+            }
         else
             temp.getActors().add("");
-
         temp.setFree_parter( Integer.parseInt(request.getParameter("freeparter")) < theatre.getNum_parter() ?  Integer.parseInt(request.getParameter("freeparter")):  theatre.getNum_parter());
         temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")) < theatre.getNum_balcon() ?  Integer.parseInt(request.getParameter("freebalcony")):  theatre.getNum_balcon());
         temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")) < theatre.getNum_beletage() ?  Integer.parseInt(request.getParameter("freebeletage")):  theatre.getNum_beletage());
         temp.setPrice_balcony(Integer.parseInt(request.getParameter("balcony")));
         temp.setPrice_beletage(Integer.parseInt(request.getParameter("beletage")));
+        temp.setLength(Integer.parseInt(request.getParameter("len")));
         temp.setPrice_parter(Integer.parseInt(request.getParameter("parter")));
         temp.setTheatre(theatre);
         theatre.getPerformances().add(temp);
@@ -149,7 +149,7 @@
         <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">
             <%=performance.getDate().toString()%>
         </td>
-        <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">
+        <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'" style="text-align: right">
             <%=performance.PrintProducers()%>
         </td>
         <td onclick="window.location = 'performancdetails.jsp?id=<%=performance.getId()%>&theatre=<%=theatre.getId()%>'">

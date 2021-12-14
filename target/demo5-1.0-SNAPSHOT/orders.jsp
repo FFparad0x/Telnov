@@ -1,4 +1,4 @@
-<%--<%@ page import="javax.servlet.http.Cookie" %>--%>
+<%--<%@ page import="jakarta.servlet.http.Cookie" %>--%>
 <%@ page import="jakarta.servlet.http.Cookie" %>
 <%@ page import="com.example.demo5.*" %>
 <%@ page import="java.util.Date" %>
@@ -38,7 +38,7 @@
             performance.setFree_parter(performance.getFree_parter() - 1);
         }
         order.setPlaceType(request.getParameter("place"));
-        Cookie[] cookies = request.getCookies();
+        Cookie[] cookies = request.getCookies(); //проверка на логин
         if (cookies != null) {
             for (Cookie cookie : request.getCookies()) {
                 if (cookie.getName().equals("id")) {
@@ -65,7 +65,7 @@
     </tr>
 
     <%
-        if (cookies != null) {
+        if (cookies != null) { // проверка на логин
             for (Cookie cookie : request.getCookies()) {
                 if (cookie.getName().equals("id")) {
                     Account account = DataBase.getAccount(Integer.parseInt(cookie.getValue()));

@@ -37,10 +37,10 @@
             theatre.setNum_balcon(Integer.parseInt(request.getParameter("balcony")));
             theatre.setNum_beletage(Integer.parseInt(request.getParameter("beletage")));
             theatre.setNum_parter(Integer.parseInt(request.getParameter("parter")));
-            for (String producers : request.getParameter("producersset").split("\n")) {
+            for (String producers : request.getParameter("producersset").split("(\\R)")) {
                 theatre.getProducers().add(producers);
             }
-            for (String producers : request.getParameter("actorsset").split("\n")) {
+            for (String producers : request.getParameter("actorsset").split("(\\R)")) {
                 theatre.getActors().add(producers);
             }
             DataBase.theatres.add(theatre);
@@ -55,10 +55,10 @@
             theatre.setNum_parter(Integer.parseInt(request.getParameter("parter")));
             theatre.getProducers().clear();
             theatre.getActors().clear();
-            for (String producers : request.getParameter("producersset").split("\n")) {
+            for (String producers : request.getParameter("producersset").split("(\\R)")) {
                 theatre.getProducers().add(producers);
             }
-            for (String producers : request.getParameter("actorsset").split("\n")) {
+            for (String producers : request.getParameter("actorsset").split("(\\R)")) {
                 theatre.getActors().add(producers);
             }
         }

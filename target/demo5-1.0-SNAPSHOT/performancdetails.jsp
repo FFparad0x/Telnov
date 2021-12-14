@@ -21,7 +21,7 @@
     Theatre theatre;
     Performance performance;
     boolean logged = false;
-    Cookie[] cookies = request.getCookies();
+    Cookie[] cookies = request.getCookies(); //проверка на логин
     if (cookies != null) {
         for (Cookie cookie : request.getCookies()) {
             if (cookie.getName().equals("status")) {
