@@ -1,4 +1,6 @@
-
+<%--
+Страница с полями для регистрации
+--%>
 <%@ page import="com.example.demo5.Account" %>
 <%@ page import="com.example.demo5.DataBase" %>
 

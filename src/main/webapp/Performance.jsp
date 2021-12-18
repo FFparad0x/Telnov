@@ -1,3 +1,7 @@
+<%--
+    На этой странице происходит изменение или создание представления
+
+--%>
 <%@ page import="com.example.demo5.Theatre" %>
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page import="com.example.demo5.Performance" %>
@@ -15,8 +19,11 @@
 <body>
 <%@ include file = "include/shapka.jsp" %>
 <%
-
-    Integer id = Integer.parseInt(request.getParameter("id")); // идет получения представени я и вывод информации о нем
+/*
+    При установленном id представления происходит редактирование
+    Если id = -1, создание новогого
+    */
+    Integer id = Integer.parseInt(request.getParameter("id")); // идет получения представении и вывод информации о нем
     Integer theatreId = Integer.parseInt(request.getParameter("theatre"));
     Theatre theatre = DataBase.getTheatre(theatreId);
     String timeS = "";

@@ -1,16 +1,38 @@
 package com.example.demo5.test.TestIndex;
 
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Optional;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class jsp {
-    @Test
-    public void TestString(){
-        String[] arr = {"tt","a","v"};
+    WebDriver driver;
 
-        System.out.println(Arrays.stream(arr).filter(i -> i.equals("d")).findFirst());
-        Optional.of("d");
+    @BeforeAll
+    static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeEach
+    void setupTest() {
+        driver = new ChromeDriver();
+    }
+
+    @AfterEach
+     void teardown() {
+        driver.quit();
+    }
+
+    @Test
+    void test() {
+        // Exercise
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        String title = driver.getTitle();
+
+        // Verify
+        assert (title).contains("Selenium WebDriver");
     }
 }

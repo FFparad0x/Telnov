@@ -2,7 +2,9 @@ package com.example.demo5;
 
 
 import java.util.ArrayList;
-
+/*
+Класс для пользовательского аккаунта
+ */
 public class Account {
     private String login;
     private String password;

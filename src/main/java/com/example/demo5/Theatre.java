@@ -1,3 +1,6 @@
+/*
+Класс для театров
+ */
 package com.example.demo5;
 
 import jakarta.ws.rs.PUT;

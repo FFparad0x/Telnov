@@ -1,3 +1,6 @@
+/*
+Класс для представлений
+ */
 package com.example.demo5;
 
 import java.time.LocalDateTime;

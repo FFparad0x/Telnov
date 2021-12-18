@@ -1,3 +1,6 @@
+/*
+Класс для хранения данных
+ */
 package com.example.demo5;
 
 import java.io.Serializable;
@@ -21,7 +24,7 @@ public class DataBase {
     }
     public static void InitTheatre() {
         theatres = new ArrayList<>();
-    }
+    } // Базовая инициализация
 
 
 

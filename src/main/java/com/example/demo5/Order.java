@@ -1,3 +1,6 @@
+/*
+Класс для хранения заказов
+ */
 package com.example.demo5;
 
 import java.util.Date;

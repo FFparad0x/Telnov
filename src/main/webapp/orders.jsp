@@ -1,14 +1,11 @@
 <%--<%@ page import="javax.servlet.http.Cookie" %>--%>
+<%--
+На этой странице выводятся и добавлятяс заказы совершенные пользователем
+--%>
 <%@ page import="javax.servlet.http.Cookie" %>
 <%@ page import="com.example.demo5.*" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %><%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 12.12.2021
-  Time: 18:56
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.text.SimpleDateFormat" %>
  <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>
 <html>
@@ -24,12 +21,16 @@
 <h2 style="text-align: center">История покупок</h2>
 
 <%
-    if (request.getParameter("buy") != null) {
+    /*
+    При уставновленном параметре buy происходит добвление билета
+
+     */
+    if (request.getParameter("buy") != null) { // Если произошла покупка, то добаляем заказ
         Theatre theatre = DataBase.getTheatre(Integer.parseInt(request.getParameter("theatre")));
         Performance performance = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("perf")));
         Order order = new Order(performance);
         if(request.getParameter("place").equals("Балкон")){
-            performance.setFree_balcony(performance.getFree_balcony() - 1);
+            performance.setFree_balcony(performance.getFree_balcony() - 1); // уменьшаем количество свободный мест
         }
         if(request.getParameter("place").equals("Бельэтаж")){
             performance.setFree_beletage(performance.getFree_beletage() - 1);
@@ -73,6 +74,9 @@
                         for (Order order : account.getOrders()) {
                             Date temp = order.getDateOfOrder();
                             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy mm:H");
+                            /*
+                            Для корректного отборажения даты в браузере требуется форматировние
+                             */
     %>
     <tr>
         <td>

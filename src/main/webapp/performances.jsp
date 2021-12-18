@@ -1,3 +1,7 @@
+<%--
+    На этой странице отображаются представления, содержащиеся в выбранном театре
+    Если их нет. то выводится сообщение об их отсутствии
+--%>
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page import="com.example.demo5.Theatre" %>
 <%@ page import="java.util.ArrayList" %>
@@ -20,6 +24,10 @@
 
 <%@ include file = "include/shapka.jsp" %>
 <%
+    /*
+    Если пользователь вошел как админ. он может добавить в этот театр
+    новое представление
+     */
 //    request.setCharacterEncoding("UTF-8");
     boolean admin = false;
     Cookie[] cookies = request.getCookies(); //проверка на логин
@@ -37,8 +45,10 @@
         theatre = DataBase.getTheatre(id);
 
     }
-
-    if (request.getParameter("saveid") != null) {
+/*
+В зависимости от установленных параметров запроса  происходит удаление, добавление, редактировние
+ */
+    if (request.getParameter("saveid") != null) { //При сохраненнии изменений сохраняем
         Performance temp = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("saveid")));
         Map<String, String[]> param = request.getParameterMap();
         temp.setName(request.getParameter("name"));
@@ -58,6 +68,7 @@
             }
         else
             temp.getActors().add("");
+        // Количество мест на представлении не может быть больше такого в театре
         temp.setFree_parter( Integer.parseInt(request.getParameter("freeparter")) < theatre.getNum_parter() ?  Integer.parseInt(request.getParameter("freeparter")):  theatre.getNum_parter());
         temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")) < theatre.getNum_balcon() ?  Integer.parseInt(request.getParameter("freebalcony")):  theatre.getNum_balcon());
         temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")) < theatre.getNum_beletage() ?  Integer.parseInt(request.getParameter("freebeletage")):  theatre.getNum_beletage());
@@ -67,7 +78,7 @@
         temp.setPrice_parter(Integer.parseInt(request.getParameter("parter")));
     }
 
-    if (request.getParameter("add") != null) {
+    if (request.getParameter("add") != null) { // При добавлении создаем новое предстваление
         Performance temp = new Performance(theatre);
         Map<String, String[]> param = request.getParameterMap();
         temp.setName(request.getParameter("name"));
@@ -79,14 +90,15 @@
                 temp.getProducer().add(producer);
             }
         else
-            temp.getProducer().add("");
+            temp.getProducer().add(""); // Если не выбран ни один режиссер, то заполняем пустым
         temp.getActors().clear();
         if(param.get("actors") != null)
             for (String producer : param.get("actors")) {
                 temp.getActors().add(producer);
             }
         else
-            temp.getActors().add("");
+            temp.getActors().add("");        // Если не выбран ни один актер, то заполняем пустым
+        // Количество мест на представлении не может быть больше такого в театре
         temp.setFree_parter( Integer.parseInt(request.getParameter("freeparter")) < theatre.getNum_parter() ?  Integer.parseInt(request.getParameter("freeparter")):  theatre.getNum_parter());
         temp.setFree_balcony(Integer.parseInt(request.getParameter("freebalcony")) < theatre.getNum_balcon() ?  Integer.parseInt(request.getParameter("freebalcony")):  theatre.getNum_balcon());
         temp.setFree_beletage(Integer.parseInt(request.getParameter("freebeletage")) < theatre.getNum_beletage() ?  Integer.parseInt(request.getParameter("freebeletage")):  theatre.getNum_beletage());

@@ -1,3 +1,6 @@
+<%--
+На этой странцие происходит удаление,добавление и редактирование театра
+--%>
 <%@ page import="com.example.demo5.Theatre" %>
 <%@ page import="com.example.demo5.DataBase" %><%--
   Created by IntelliJ IDEA.

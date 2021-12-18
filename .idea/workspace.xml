@@ -10,20 +10,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9045f91e-0a32-44d8-9735-59277159ec57" name="Changes" comment="push">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/demo5_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/demo5_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/IndexCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/IndexCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Performance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/Theatre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/Theatre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo5/test/TestIndex/jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo5/test/TestIndex/jsp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Performance.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/authorization.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Theatre.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/shapka.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performancdetails.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/performances.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/Performance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/Performance.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/include/shapka.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/include/shapka.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performancdetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performancdetails.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performances.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/performances.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/tickets.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/regScript.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo5/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo5/DataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo5/DataBaseAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo5/DataBaseTicket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo5/Ticket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo5/test/TestIndex/jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo5/test/TestIndex/jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/WEB-INF/classes/com/example/demo5/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/WEB-INF/classes/com/example/demo5/DataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/WEB-INF/classes/com/example/demo5/DataBaseAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/WEB-INF/classes/com/example/demo5/DataBaseTicket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo5-1.0-SNAPSHOT/WEB-INF/classes/com/example/demo5/Ticket.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +115,23 @@
       <recent name="D:\Program Files\IdeaProjects\TelnovT\src\main\webapp\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.12">
+  <component name="RunManager" selected="JUnit.jsp.test">
+    <configuration name="jsp.TestAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo5.test.TestIndex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo5.test.TestIndex" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo5.test.TestIndex.jsp" />
+      <option name="METHOD_NAME" value="TestAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="jsp.TestString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo5" />
       <extension name="coverage">
@@ -112,6 +143,22 @@
       <option name="PACKAGE_NAME" value="com.example.demo5.test.TestIndex" />
       <option name="MAIN_CLASS_NAME" value="com.example.demo5.test.TestIndex.jsp" />
       <option name="METHOD_NAME" value="TestString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsp.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo5.test.TestIndex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo5.test.TestIndex" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo5.test.TestIndex.jsp" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,13 +258,16 @@
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JUnit.jsp.TestString" />
       <item itemvalue="Tomcat Server.Tomcat 10.0.12" />
+      <item itemvalue="JUnit.jsp.TestAdd" />
+      <item itemvalue="JUnit.jsp.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.jsp.test" />
+        <item itemvalue="JUnit.jsp.TestAdd" />
         <item itemvalue="JUnit.jsp.TestString" />
         <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="JavaScript Debug.index.jsp" />
-        <item itemvalue="JUnit.jsp.TestString" />
       </list>
     </recent_temporary>
   </component>
@@ -257,6 +307,7 @@
       <workItem from="1639429930886" duration="1682000" />
       <workItem from="1639435999975" duration="611000" />
       <workItem from="1639472892316" duration="1746000" />
+      <workItem from="1639844945479" duration="5329000" />
     </task>
     <task id="LOCAL-00001" summary="div improvement">
       <created>1638399931943</created>
@@ -433,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639475437453</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="push">
+      <created>1639476327844</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1639476327844</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

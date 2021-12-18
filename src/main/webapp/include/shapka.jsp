@@ -1,3 +1,6 @@
+<%--
+Этот код включается во все остальные страницы и содержит лого и поля для логина и регистрации
+--%>
 <%--<%@ page import="javax.servlet.http.Cookie" %>--%>
 <%@ page import="javax.servlet.http.Cookie" %>
 <%@ page import="com.example.demo5.Account" %>
@@ -7,11 +10,11 @@
 <div class="top">
 
     <%
-        response.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8"); //
         boolean isLogin = false;
-        if(request.getParameter("exit")!=null || request.getParameter("llogin") != null) {
+        if(request.getParameter("exit")!=null || request.getParameter("llogin") != null) { // Если происходит вход или выход
             boolean isEqual = false;
-            if (request.getParameter("exit") != null) {
+            if (request.getParameter("exit") != null) { // при выходе удаляем все куки
                 Cookie[] cookie = request.getCookies();
                 for (Cookie o : cookie) {
                     o.setMaxAge(0);
@@ -22,9 +25,9 @@
             }
             String value1 = request.getParameter("llogin");
             String value2 = request.getParameter("lpass");
-            if (value1 != null) {
+            if (value1 != null) { // Если происходит вход и логин пароль существуют
                 Account.status = false;
-                for (Account account : DataBase.accounts) {
+                for (Account account : DataBase.accounts) { // Проходимся по всем аккаунтам и ищем совпадение
 
                     if (value1.equals(account.getLogin()) && value2.equals(account.getPassword())) {
                         //response.sendRedirect("performances.jsp");
@@ -60,7 +63,7 @@
             }
 
 
-            if (isEqual) {
+            if (isEqual) { // обновляем страницу при успешном входе выходе
                 Account.status = true;
                 response.setIntHeader("Refresh", 0);
                 return;

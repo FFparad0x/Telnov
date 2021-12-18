@@ -18,6 +18,9 @@
 <body>
 <%@ include file="include/shapka.jsp" %>
 <%
+    /*
+    На этой странице отображаются детали о представлении
+      */
     Theatre theatre;
     Performance performance;
     boolean logged = false;
@@ -31,14 +34,22 @@
         }
     }
 
-    if (request.getParameter("theatre") != null && request.getParameter("id") != null) {
+    if (request.getParameter("theatre") != null && request.getParameter("id") != null) { // Если необходимо открыть данные о предствавлении,
+        // то открываем и выводим данные считав id в запрсое
         theatre = DataBase.getTheatre(Integer.parseInt(request.getParameter("theatre")));
         performance = theatre.GetPerformanceById(Integer.parseInt(request.getParameter("id")));
         Date time = performance.getDate();
         Calendar calendar = GregorianCalendar.getInstance();
         calendar.setTime(time);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'H:mm");
+        /*
+        Для вывода даты в форме необходимо форматирования в виде 2012-11-23T12:23
+        (yyyy-MM-dd'T'H:mm)
+         */
         String timeS = format.format(time);
+        /*
+        Т.к. с 0 - 10 часов часы обозначаются 1 цифрой, то необходимо добавить 0
+         */
         if (calendar.get(Calendar.HOUR_OF_DAY) < 10)
             timeS = timeS.split("T")[0] + "T0" + timeS.split("T")[1];
 
@@ -57,7 +68,11 @@
                 <h2>Режиссеры</h2>
 
                 <%
+                    /*
+                    Заполняем в поля ифнормацию
+                     */
                     for (String producer : performance.getProducers()) {
+
                 %>
                 <p><%=producer + "\n"%>
                 </p>
@@ -84,6 +99,9 @@
                 <p>Цена: <%=performance.getPrice_parter()%>
                 </>
                 <p><%
+                    /*
+                    Если пользователь не вошел, то выводится требование войти
+                     */
                     if (logged) {
                         if (performance.getFree_parter() > 0) {
                 %>
@@ -110,6 +128,9 @@
     <p>Цена: <%=performance.getPrice_beletage()%>
     </>
     <p><%
+        /*
+        Если пользователь вошел, то выводим кнопку купить
+         */
         if (logged) {
             if (performance.getFree_beletage() > 0) {
     %>

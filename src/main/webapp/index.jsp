@@ -1,3 +1,6 @@
+<%--
+Главная страница приложения, где выводятся театры и фильтр для поиска по параметрам
+--%>
 <%@ page import="com.example.demo5.Theatre" %>
 <%@ page import="com.example.demo5.DataBase" %>
 <%@ page import="java.text.SimpleDateFormat" %>
@@ -13,7 +16,11 @@
 <head>
     <link rel="stylesheet" href="res/styles.css">
     <meta charset="UTF-8">
+
     <%
+        /*
+        При отсутствии созданных объектов, создаем и инициализируем
+         */
         if (DataBase.theatres == null) {
             DataBase.InitTheatre();
         }
@@ -30,6 +37,11 @@
                 }
             }
         }
+        /*
+        Для операций добавления, изменения, удаления
+        Считываем параметры запросов и в зависимости от них
+        выполняем действия
+         */
         if (request.getParameter("add") != null) { // добавление театра
             Theatre theatre = new Theatre();
             theatre.setName(request.getParameter("name"));
@@ -65,7 +77,10 @@
         if (request.getParameter("delid") != null) { // уаление театра
             DataBase.theatres.remove(DataBase.getTheatre(Integer.parseInt(request.getParameter("delid"))));
         }
-
+/*
+ Для отображения фильтра в циклах for проходимся по всем театрам и прдеставлениям
+ и выводим их значениия, записывая в id значения эл-тов
+ */
         ArrayList<Theatre> theatresToShow = null;
         try { // проходимся по театрам, если поиск не производитсяЮ то отображаем все что есть
             ArrayList<Theatre> searchResult = null;
@@ -213,7 +228,9 @@
         }
     %>
 
-
+<%--
+    Вывод таблицы с театрами и фильтров
+--%>
     <title>Концертная касса</title>
 </head>
 <body>
